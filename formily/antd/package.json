@@ -1,6 +1,6 @@
 {
   "name": "@designable-next/formily-antd",
-  "version": "0.1.0-alpha.0",
+  "version": "0.1.0-alpha.1",
   "homepage": "https://github.com/LZCaaT/quality-designable#readme",
   "bugs": {
     "url": "https://github.com/LZCaaT/quality-designable/issues"
@@ -10,6 +10,10 @@
     "url": "git+https://github.com/LZCaaT/quality-designable.git"
   },
   "license": "MIT",
+  "files": [
+    "lib",
+    "esm"
+  ],
   "main": "lib",
   "module": "esm",
   "types": "esm/index.d.ts",
@@ -21,14 +25,14 @@
     "start": "webpack-dev-server --config playground/webpack.dev.ts"
   },
   "dependencies": {
-    "@designable-next/core": "0.1.0-alpha.0",
-    "@designable-next/formily-setters": "0.1.0-alpha.0",
-    "@designable-next/formily-transformer": "0.1.0-alpha.0",
-    "@designable-next/react": "0.1.0-alpha.0"
+    "@designable-next/core": "0.1.0-alpha.1",
+    "@designable-next/formily-setters": "0.1.0-alpha.1",
+    "@designable-next/formily-transformer": "0.1.0-alpha.1",
+    "@designable-next/react": "0.1.0-alpha.1"
   },
   "devDependencies": {
     "@designable-next/formily-antd-v6": "file:../../../quality-formily-antd-v6/packages/components",
-    "@designable-next/react-settings-form": "0.1.0-alpha.0",
+    "@designable-next/react-settings-form": "0.1.0-alpha.1",
     "@formily/react": "^2.3.7",
     "@formily/reactive": "^2.3.7",
     "@formily/shared": "^2.3.7",

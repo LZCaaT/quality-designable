@@ -1,5 +1,5 @@
-import { Workspace } from '@quality-designable/core'
-import { globalThisPolyfill } from '@quality-designable/shared'
+import { Workspace } from '@designable-next/core'
+import { globalThisPolyfill } from '@designable-next/shared'
 import { useContext } from 'react'
 import { WorkspaceContext } from '../context'
 import { useDesigner } from './useDesigner'

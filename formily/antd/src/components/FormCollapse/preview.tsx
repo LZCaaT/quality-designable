@@ -1,17 +1,13 @@
-import { observer } from '@formily/react'
-import { toArr } from '@formily/shared'
-import {
-  TreeNode,
-  createBehavior,
-  createResource,
-} from '@quality-designable/core'
+import { TreeNode, createBehavior, createResource } from '@designable-next/core'
 import {
   DnFC,
   DroppableWidget,
   TreeNodeWidget,
   useNodeIdProps,
   useTreeNode,
-} from '@quality-designable/react'
+} from '@designable-next/react'
+import { observer } from '@formily/react'
+import { toArr } from '@formily/shared'
 import { Collapse, type CollapseProps } from 'antd'
 import React, { Fragment, useState } from 'react'
 import { LoadTemplate } from '../../common/LoadTemplate'

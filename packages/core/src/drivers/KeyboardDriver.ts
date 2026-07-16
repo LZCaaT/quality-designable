@@ -1,4 +1,4 @@
-import { EventDriver } from '@quality-designable/shared'
+import { EventDriver } from '@designable-next/shared'
 import { KeyDownEvent, KeyUpEvent } from '../events'
 
 function filter(event: KeyboardEvent) {

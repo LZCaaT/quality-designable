@@ -1,4 +1,4 @@
-import { EventDriver, globalThisPolyfill } from '@quality-designable/shared'
+import { EventDriver, globalThisPolyfill } from '@designable-next/shared'
 import { ViewportScrollEvent } from '../events'
 import { Engine } from '../models/Engine'
 

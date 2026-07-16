@@ -1,4 +1,4 @@
-import { requestIdle } from '@quality-designable/shared'
+import { requestIdle } from '@designable-next/shared'
 import {
   DragMoveEvent,
   DragStartEvent,

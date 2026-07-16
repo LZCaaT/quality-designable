@@ -1,12 +1,12 @@
-import { autorun } from '@formily/reactive'
-import { observer } from '@formily/reactive-react'
 import {
   ClosestPosition,
   CursorStatus,
   DragMoveEvent,
   TreeNode,
-} from '@quality-designable/core'
-import { isFn } from '@quality-designable/shared'
+} from '@designable-next/core'
+import { isFn } from '@designable-next/shared'
+import { autorun } from '@formily/reactive'
+import { observer } from '@formily/reactive-react'
 import cls from 'classnames'
 import React, { useContext, useEffect, useRef } from 'react'
 import {

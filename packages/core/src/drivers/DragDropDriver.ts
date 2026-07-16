@@ -1,4 +1,4 @@
-import { EventDriver } from '@quality-designable/shared'
+import { EventDriver } from '@designable-next/shared'
 import { DragMoveEvent, DragStartEvent, DragStopEvent } from '../events'
 import { Engine } from '../models/Engine'
 

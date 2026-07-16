@@ -1,4 +1,4 @@
-import { ICustomEvent } from '@quality-designable/shared'
+import { ICustomEvent } from '@designable-next/shared'
 import { ITreeNode, TreeNode } from '../../models'
 import { IEngineContext } from '../../types'
 

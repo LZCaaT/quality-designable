@@ -1,5 +1,5 @@
+import { GlobalRegistry } from '@designable-next/core'
 import { ISchema } from '@formily/react'
-import { GlobalRegistry } from '@quality-designable/core'
 
 export const Slider: ISchema = {
   type: 'object',

@@ -1,4 +1,4 @@
-import { usePrefix } from '@quality-designable/react'
+import { usePrefix } from '@designable-next/react'
 import cls from 'classnames'
 import React, { useEffect, useState } from 'react'
 import './styles.scss'

@@ -1,4 +1,4 @@
-import { TreeNode } from '@quality-designable/core'
+import { TreeNode } from '@designable-next/core'
 import { Button } from 'antd'
 import React from 'react'
 import { usePrefix } from '../../hooks'

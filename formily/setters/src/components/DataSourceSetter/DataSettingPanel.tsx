@@ -1,10 +1,15 @@
 import { PlusOutlined } from '@ant-design/icons'
+import {
+  ArrayItems,
+  Form,
+  FormItem,
+  Input,
+} from '@designable-next/formily-antd-v6'
+import { TextWidget, usePrefix } from '@designable-next/react'
+import { ValueInput } from '@designable-next/react-settings-form'
 import { createForm, Form as FormCore } from '@formily/core'
 import { createSchemaField } from '@formily/react'
 import { observer } from '@formily/reactive-react'
-import { TextWidget, usePrefix } from '@quality-designable/react'
-import { ValueInput } from '@quality-designable/react-settings-form'
-import { ArrayItems, Form, FormItem, Input } from '@quality-formily/antd-v6'
 import { Button } from 'antd'
 import React, { Fragment, useMemo } from 'react'
 import { Header } from './Header'

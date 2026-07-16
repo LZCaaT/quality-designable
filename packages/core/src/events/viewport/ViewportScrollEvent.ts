@@ -1,4 +1,4 @@
-import { ICustomEvent } from '@quality-designable/shared'
+import { ICustomEvent } from '@designable-next/shared'
 import { AbstractViewportEvent } from './AbstractViewportEvent'
 
 export class ViewportScrollEvent

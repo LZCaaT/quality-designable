@@ -1,4 +1,4 @@
-import { usePrefix } from '@quality-designable/react'
+import { usePrefix } from '@designable-next/react'
 import { ColorPicker, Input } from 'antd'
 import React from 'react'
 import './styles.scss'

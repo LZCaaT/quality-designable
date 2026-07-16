@@ -1,16 +1,12 @@
-import { observer } from '@formily/reactive-react'
-import {
-  TreeNode,
-  createBehavior,
-  createResource,
-} from '@quality-designable/core'
+import { TreeNode, createBehavior, createResource } from '@designable-next/core'
+import { FormGrid as FormilyGird } from '@designable-next/formily-antd-v6'
 import {
   DnFC,
   DroppableWidget,
   useNodeIdProps,
   useTreeNode,
-} from '@quality-designable/react'
-import { FormGrid as FormilyGird } from '@quality-formily/antd-v6'
+} from '@designable-next/react'
+import { observer } from '@formily/reactive-react'
 import React, { PropsWithChildren } from 'react'
 import { LoadTemplate } from '../../common/LoadTemplate'
 import { AllLocales } from '../../locales'

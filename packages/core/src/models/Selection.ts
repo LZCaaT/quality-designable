@@ -1,5 +1,5 @@
+import { isArr, isStr } from '@designable-next/shared'
 import { action, define, observable } from '@formily/reactive'
-import { isArr, isStr } from '@quality-designable/shared'
 import { SelectNodeEvent, UnSelectNodeEvent } from '../events'
 import { Operation } from './Operation'
 import { TreeNode } from './TreeNode'

@@ -1,4 +1,4 @@
-import { Event, globalThisPolyfill, uid } from '@quality-designable/shared'
+import { Event, globalThisPolyfill, uid } from '@designable-next/shared'
 import { IEngineProps } from '../types'
 import { Cursor } from './Cursor'
 import { Keyboard } from './Keyboard'

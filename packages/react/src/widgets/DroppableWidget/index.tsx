@@ -1,5 +1,5 @@
+import { TreeNode } from '@designable-next/core'
 import { observer } from '@formily/reactive-react'
-import { TreeNode } from '@quality-designable/core'
 import React, { PropsWithChildren } from 'react'
 import { useNodeIdProps, useTreeNode } from '../../hooks'
 import {

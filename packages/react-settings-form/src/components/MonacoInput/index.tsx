@@ -1,12 +1,12 @@
 import { parse, parseExpression } from '@babel/parser'
-import Editor, { EditorProps, loader } from '@monaco-editor/react'
 import {
   IconWidget,
   TextWidget,
   usePrefix,
   useTheme,
-} from '@quality-designable/react'
-import { uid } from '@quality-designable/shared'
+} from '@designable-next/react'
+import { uid } from '@designable-next/shared'
+import Editor, { EditorProps, loader } from '@monaco-editor/react'
 import { Tooltip } from 'antd'
 import cls from 'classnames'
 import * as monaco from 'monaco-editor/esm/vs/editor/editor.api'

@@ -1,4 +1,4 @@
-import { getKeyCodeFromEvent, KeyCode } from '@quality-designable/shared'
+import { getKeyCodeFromEvent, KeyCode } from '@designable-next/shared'
 import { IEngineContext } from '../../types'
 
 export class AbstractKeyboardEvent {

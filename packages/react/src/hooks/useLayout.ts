@@ -1,4 +1,4 @@
-import { globalThisPolyfill } from '@quality-designable/shared'
+import { globalThisPolyfill } from '@designable-next/shared'
 import { useContext } from 'react'
 import { DesignerLayoutContext } from '../context'
 import { IDesignerLayoutContext } from '../types'

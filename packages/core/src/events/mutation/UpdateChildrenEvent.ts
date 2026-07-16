@@ -1,4 +1,4 @@
-import { ICustomEvent } from '@quality-designable/shared'
+import { ICustomEvent } from '@designable-next/shared'
 import { AbstractMutationNodeEvent } from './AbstractMutationNodeEvent'
 
 export class UpdateChildrenEvent

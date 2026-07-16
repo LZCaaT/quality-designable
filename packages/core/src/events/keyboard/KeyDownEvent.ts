@@ -1,4 +1,4 @@
-import { ICustomEvent } from '@quality-designable/shared'
+import { ICustomEvent } from '@designable-next/shared'
 import { AbstractKeyboardEvent } from './AbstractKeyboardEvent'
 
 export class KeyDownEvent

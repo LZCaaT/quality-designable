@@ -1,5 +1,5 @@
-import { TreeNode } from '@quality-designable/core'
-import { useSelectedNode } from '@quality-designable/react'
+import { TreeNode } from '@designable-next/core'
+import { useSelectedNode } from '@designable-next/react'
 import { TreeSelect, TreeSelectProps } from 'antd'
 import React from 'react'
 

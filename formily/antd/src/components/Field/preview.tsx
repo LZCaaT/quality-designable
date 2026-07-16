@@ -1,3 +1,12 @@
+import { createBehavior } from '@designable-next/core'
+import { FormItem } from '@designable-next/formily-antd-v6'
+import {
+  DnFC,
+  useComponents,
+  useDesigner,
+  useTreeNode,
+} from '@designable-next/react'
+import { isArr, isStr } from '@designable-next/shared'
 import { FormPath } from '@formily/core'
 import {
   ArrayField,
@@ -10,15 +19,6 @@ import {
 } from '@formily/react'
 import { toJS } from '@formily/reactive'
 import { each, reduce } from '@formily/shared'
-import { createBehavior } from '@quality-designable/core'
-import {
-  DnFC,
-  useComponents,
-  useDesigner,
-  useTreeNode,
-} from '@quality-designable/react'
-import { isArr, isStr } from '@quality-designable/shared'
-import { FormItem } from '@quality-formily/antd-v6'
 import React from 'react'
 import { Container } from '../../common/Container'
 import { AllLocales } from '../../locales'

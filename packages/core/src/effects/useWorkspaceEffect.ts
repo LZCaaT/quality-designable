@@ -1,4 +1,4 @@
-import { ICustomEvent } from '@quality-designable/shared'
+import { ICustomEvent } from '@designable-next/shared'
 import { SelectNodeEvent } from '../events'
 import { Engine } from '../models'
 import { IEngineContext } from '../types'

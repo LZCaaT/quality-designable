@@ -1,8 +1,8 @@
-import { Engine } from '@quality-designable/core'
+import { Engine } from '@designable-next/core'
 import {
   transformToSchema,
   transformToTreeNode,
-} from '@quality-designable/formily-transformer'
+} from '@designable-next/formily-transformer'
 
 export const saveSchema = (designer: Engine, onSuccess?: () => void) => {
   localStorage.setItem(

@@ -4,7 +4,7 @@ import {
   ILineSegment,
   IPoint,
   Rect,
-} from '@quality-designable/shared'
+} from '@designable-next/shared'
 import { TransformHelper } from './TransformHelper'
 import { TreeNode } from './TreeNode'
 

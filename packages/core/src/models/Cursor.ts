@@ -1,5 +1,5 @@
+import { globalThisPolyfill, isValidNumber } from '@designable-next/shared'
 import { action, define, observable } from '@formily/reactive'
-import { globalThisPolyfill, isValidNumber } from '@quality-designable/shared'
 import { Engine } from './Engine'
 
 export enum CursorStatus {

@@ -1,5 +1,5 @@
-import { Viewport as ViewportType } from '@quality-designable/core'
-import { globalThisPolyfill, requestIdle } from '@quality-designable/shared'
+import { Viewport as ViewportType } from '@designable-next/core'
+import { globalThisPolyfill, requestIdle } from '@designable-next/shared'
 import cls from 'classnames'
 import React, { useLayoutEffect, useRef, useState } from 'react'
 import { usePrefix, useViewport } from '../hooks'

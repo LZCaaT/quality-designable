@@ -1,4 +1,4 @@
-import { globalThisPolyfill } from '@quality-designable/shared'
+import { globalThisPolyfill } from '@designable-next/shared'
 import { IEngineContext } from '../../types'
 
 export interface IViewportEventData {

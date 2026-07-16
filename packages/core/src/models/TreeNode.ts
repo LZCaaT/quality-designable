@@ -1,5 +1,5 @@
+import { each, isFn, uid } from '@designable-next/shared'
 import { action, define, observable, toJS } from '@formily/reactive'
-import { each, isFn, uid } from '@quality-designable/shared'
 import {
   AppendNodeEvent,
   CloneNodeEvent,

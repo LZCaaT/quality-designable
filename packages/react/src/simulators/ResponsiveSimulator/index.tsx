@@ -1,15 +1,15 @@
-import { observer } from '@formily/reactive-react'
 import {
   CursorDragType,
   DragMoveEvent,
   DragStartEvent,
   DragStopEvent,
   Engine,
-} from '@quality-designable/core'
+} from '@designable-next/core'
 import {
   calcSpeedFactor,
   createUniformSpeedAnimation,
-} from '@quality-designable/shared'
+} from '@designable-next/shared'
+import { observer } from '@formily/reactive-react'
 import React, { useRef } from 'react'
 import { useDesigner, usePrefix, useScreen } from '../../hooks'
 import { IconWidget } from '../../widgets'

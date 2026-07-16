@@ -26,12 +26,12 @@ const presets = () => {
     '@formily/core': 'Formily.Core',
     '@formily/json-schema': 'Formily.JSONSchema',
     '@formily/react': 'Formily.React',
-    '@quality-formily/antd-v6': 'Formily.AntdV6',
-    '@quality-designable/shared': 'Designable.Shared',
-    '@quality-designable/core': 'Designable.Core',
-    '@quality-designable/react': 'Designable.React',
-    '@quality-designable/react-sandbox': 'Designable.ReactSandbox',
-    '@quality-designable/react-settings-form': 'Designable.ReactSettingsForm',
+    '@designable-next/formily-antd-v6': 'Formily.AntdV6',
+    '@designable-next/shared': 'Designable.Shared',
+    '@designable-next/core': 'Designable.Core',
+    '@designable-next/react': 'Designable.React',
+    '@designable-next/react-sandbox': 'Designable.ReactSandbox',
+    '@designable-next/react-settings-form': 'Designable.ReactSettingsForm',
   }
   return [
     resolve({

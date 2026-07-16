@@ -1,5 +1,5 @@
 {
-  "name": "@quality-designable/core",
+  "name": "@designable-next/core",
   "version": "0.1.0-alpha.0",
   "homepage": "https://github.com/LZCaaT/quality-designable#readme",
   "bugs": {
@@ -20,8 +20,8 @@
     "build:umd": "rollup --config"
   },
   "dependencies": {
-    "@juggle/resize-observer": "^3.3.1",
-    "@quality-designable/shared": "0.1.0-alpha.0"
+    "@designable-next/shared": "0.1.0-alpha.0",
+    "@juggle/resize-observer": "^3.3.1"
   },
   "devDependencies": {
     "@formily/json-schema": "^2.3.7",

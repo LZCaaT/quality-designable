@@ -1,4 +1,4 @@
-import { IconWidget, usePrefix } from '@quality-designable/react'
+import { IconWidget, usePrefix } from '@designable-next/react'
 import cls from 'classnames'
 import React, { PropsWithChildren, useContext } from 'react'
 import './styles.scss'

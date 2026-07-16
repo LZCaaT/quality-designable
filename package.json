@@ -23,7 +23,7 @@
     "release:force": "lerna publish from-package --yes",
     "release:github": "ts-node scripts/release release",
     "start": "dumi dev",
-    "start:antd": "npm run start --workspace @quality-designable/formily-antd",
+    "start:antd": "npm run start --workspace @designable-next/formily-antd",
     "test": "jest --coverage",
     "test:prod": "jest --coverage --silent",
     "test:watch": "jest --watch",

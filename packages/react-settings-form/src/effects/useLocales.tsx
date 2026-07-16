@@ -1,7 +1,7 @@
+import { GlobalRegistry, TreeNode } from '@designable-next/core'
+import { IconWidget } from '@designable-next/react'
+import { isStr } from '@designable-next/shared'
 import { isVoidField, onFieldReact } from '@formily/core'
-import { GlobalRegistry, TreeNode } from '@quality-designable/core'
-import { IconWidget } from '@quality-designable/react'
-import { isStr } from '@quality-designable/shared'
 import React from 'react'
 
 const takeIcon = (message: string) => {

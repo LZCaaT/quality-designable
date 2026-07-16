@@ -1,5 +1,5 @@
-import { createBehavior, createResource } from '@quality-designable/core'
-import { DnFC } from '@quality-designable/react'
+import { createBehavior, createResource } from '@designable-next/core'
+import { DnFC } from '@designable-next/react'
 import React from 'react'
 import { Container } from '../../common/Container'
 import { AllLocales } from '../../locales'

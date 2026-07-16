@@ -3,7 +3,7 @@ import {
   calcExtendsLineSegmentOfRect,
   LineSegment,
   Rect,
-} from '@quality-designable/shared'
+} from '@designable-next/shared'
 import { SnapLine } from './SnapLine'
 import { TransformHelper } from './TransformHelper'
 import { TreeNode } from './TreeNode'

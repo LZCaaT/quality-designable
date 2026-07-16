@@ -1,8 +1,4 @@
-import {
-  each,
-  globalThisPolyfill,
-  isPlainObj,
-} from '@quality-designable/shared'
+import { each, globalThisPolyfill, isPlainObj } from '@designable-next/shared'
 
 export const lowerSnake = (str: string) => {
   return String(str).replace(/\s+/g, '_').toLocaleLowerCase()

@@ -1,6 +1,6 @@
+import { TextWidget, usePrefix } from '@designable-next/react'
+import { MonacoInput } from '@designable-next/react-settings-form'
 import { isPlainObj, reduce } from '@formily/shared'
-import { TextWidget, usePrefix } from '@quality-designable/react'
-import { MonacoInput } from '@quality-designable/react-settings-form'
 import { Menu } from 'antd'
 import React, { useState } from 'react'
 import { FieldProperties } from './properties'

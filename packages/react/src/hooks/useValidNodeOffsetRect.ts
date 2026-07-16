@@ -1,9 +1,5 @@
-import {
-  CursorDragType,
-  CursorStatus,
-  TreeNode,
-} from '@quality-designable/core'
-import { LayoutObserver } from '@quality-designable/shared'
+import { CursorDragType, CursorStatus, TreeNode } from '@designable-next/core'
+import { LayoutObserver } from '@designable-next/shared'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useDesigner } from './useDesigner'
 import { useViewport } from './useViewport'

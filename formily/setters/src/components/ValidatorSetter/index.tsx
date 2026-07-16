@@ -1,3 +1,6 @@
+import { GlobalRegistry } from '@designable-next/core'
+import { ArrayItems } from '@designable-next/formily-antd-v6'
+import { FoldItem } from '@designable-next/react-settings-form'
 import { ArrayField } from '@formily/core'
 import {
   ISchema,
@@ -6,9 +9,6 @@ import {
   SchemaContext,
   useField,
 } from '@formily/react'
-import { GlobalRegistry } from '@quality-designable/core'
-import { FoldItem } from '@quality-designable/react-settings-form'
-import { ArrayItems } from '@quality-formily/antd-v6'
 import { Select } from 'antd'
 import React from 'react'
 

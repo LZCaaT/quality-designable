@@ -1,6 +1,6 @@
+import { each } from '@designable-next/shared'
 import { Path } from '@formily/path'
 import { observable } from '@formily/reactive'
-import { each } from '@quality-designable/shared'
 import { isBehaviorHost, isBehaviorList } from './externals'
 import { getBrowserLanguage, lowerSnake, mergeLocales } from './internals'
 import { TreeNode } from './models'

@@ -1,4 +1,4 @@
-import { GlobalRegistry } from '@quality-designable/core'
+import { GlobalRegistry } from '@designable-next/core'
 import enUS from './en-US'
 import koKR from './ko-KR'
 import zhCN from './zh-CN'

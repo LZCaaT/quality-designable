@@ -1,5 +1,5 @@
+import { Operation } from '@designable-next/core'
 import { onFieldInputValueChange } from '@formily/core'
-import { Operation } from '@quality-designable/core'
 
 let timeRequest = null
 

@@ -1,5 +1,5 @@
 {
-  "name": "@quality-designable/formily-setters",
+  "name": "@designable-next/formily-setters",
   "version": "0.1.0-alpha.0",
   "homepage": "https://github.com/LZCaaT/quality-designable#readme",
   "bugs": {
@@ -20,21 +20,21 @@
     "start": "webpack-dev-server --config playground/webpack.dev.ts"
   },
   "dependencies": {
-    "@quality-designable/core": "0.1.0-alpha.0",
-    "@quality-designable/formily-transformer": "0.1.0-alpha.0",
-    "@quality-designable/react": "0.1.0-alpha.0",
-    "@quality-designable/react-settings-form": "0.1.0-alpha.0"
+    "@designable-next/core": "0.1.0-alpha.0",
+    "@designable-next/formily-transformer": "0.1.0-alpha.0",
+    "@designable-next/react": "0.1.0-alpha.0",
+    "@designable-next/react-settings-form": "0.1.0-alpha.0"
   },
   "devDependencies": {
+    "@designable-next/formily-antd-v6": "file:../../../quality-formily-antd-v6/packages/components",
     "@formily/react": "^2.3.7",
     "@formily/shared": "^2.3.7",
-    "@quality-formily/antd-v6": "file:../../../quality-formily-antd-v6/packages/components",
     "antd": "^6.0.0"
   },
   "peerDependencies": {
+    "@designable-next/formily-antd-v6": "^0.1.0-0",
     "@formily/react": "^2.3.7",
     "@formily/shared": "^2.3.7",
-    "@quality-formily/antd-v6": "^0.1.0-0",
     "@types/react": ">=19.0.0 <20.0.0",
     "@types/react-dom": ">=19.0.0 <20.0.0",
     "antd": "^6.0.0",

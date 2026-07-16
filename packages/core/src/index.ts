@@ -1,4 +1,4 @@
-import { globalThisPolyfill } from '@quality-designable/shared'
+import { globalThisPolyfill } from '@designable-next/shared'
 import * as Core from './exports'
 export * from './exports'
 

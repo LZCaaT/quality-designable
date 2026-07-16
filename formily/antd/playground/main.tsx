@@ -3,7 +3,7 @@ import {
   GlobalRegistry,
   KeyCode,
   Shortcut,
-} from '@quality-designable/core'
+} from '@designable-next/core'
 import {
   ComponentTreeWidget,
   CompositePanel,
@@ -20,11 +20,11 @@ import {
   ViewToolsWidget,
   Workspace,
   WorkspacePanel,
-} from '@quality-designable/react'
+} from '@designable-next/react'
 import {
   setNpmCDNRegistry,
   SettingsForm,
-} from '@quality-designable/react-settings-form'
+} from '@designable-next/react-settings-form'
 import { App as AntdApp } from 'antd'
 import React, { useMemo } from 'react'
 import { createRoot } from 'react-dom/client'

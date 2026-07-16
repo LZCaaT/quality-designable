@@ -1,10 +1,4 @@
-import { createForm, isVoidField } from '@formily/core'
-import { createSchemaField } from '@formily/react'
-import { clone, uid } from '@formily/shared'
-import { GlobalRegistry } from '@quality-designable/core'
-import { TextWidget, usePrefix } from '@quality-designable/react'
-import { MonacoInput } from '@quality-designable/react-settings-form'
-import { requestIdle } from '@quality-designable/shared'
+import { GlobalRegistry } from '@designable-next/core'
 import {
   ArrayTable,
   Form,
@@ -12,7 +6,13 @@ import {
   FormItem,
   Input,
   Select,
-} from '@quality-formily/antd-v6'
+} from '@designable-next/formily-antd-v6'
+import { TextWidget, usePrefix } from '@designable-next/react'
+import { MonacoInput } from '@designable-next/react-settings-form'
+import { requestIdle } from '@designable-next/shared'
+import { createForm, isVoidField } from '@formily/core'
+import { createSchemaField } from '@formily/react'
+import { clone, uid } from '@formily/shared'
 import { Button, Card, Modal, Tag, Tooltip } from 'antd'
 import React, { useEffect, useMemo, useState } from 'react'
 import { initDeclaration } from './declarations'

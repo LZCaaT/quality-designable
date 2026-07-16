@@ -1,6 +1,6 @@
 {
   "name": "@designable-next/shared",
-  "version": "0.1.0-alpha.1",
+  "version": "0.1.0-alpha.2",
   "homepage": "https://github.com/LZCaaT/quality-designable#readme",
   "bugs": {
     "url": "https://github.com/LZCaaT/quality-designable/issues"
@@ -10,13 +10,13 @@
     "url": "git+https://github.com/LZCaaT/quality-designable.git"
   },
   "license": "MIT",
+  "main": "lib",
+  "module": "esm",
+  "types": "lib/index.d.ts",
   "files": [
     "lib",
     "esm"
   ],
-  "main": "lib",
-  "module": "esm",
-  "types": "lib/index.d.ts",
   "scripts": {
     "build": "rimraf -rf lib esm dist && npm run build:cjs && npm run build:esm && npm run build:umd",
     "build:cjs": "tsc --project tsconfig.build.json",

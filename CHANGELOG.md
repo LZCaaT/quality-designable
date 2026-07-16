@@ -1,5 +1,15 @@
 # Changelog
 
+## v0.1.0-alpha.2 (2026-07-16)
+
+### Bug Fixes
+
+1. Keep the selection overlay aligned after dropping or moving a component.
+
+### Tests
+
+1. Upgrade Jest and add selection overlay synchronization regression tests.
+
 ## v1.0.0(2026-03-02)
 
 ### :blush: Other Changes

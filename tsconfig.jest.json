@@ -2,6 +2,7 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "jsx": "react",
+    "sourceMap": true,
     "paths": {
       "@designable-next/*": ["./packages/*/src"]
     }

@@ -1,4 +1,4 @@
-import { Point } from '@kdesignable/shared'
+import { Point } from '@quality-designable/shared'
 import {
   DragMoveEvent,
   DragStartEvent,

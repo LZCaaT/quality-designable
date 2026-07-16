@@ -2,7 +2,7 @@
  * 支持文本、数字、布尔、表达式
  * Todo: JSON、富文本，公式
  */
-import { TextWidget } from '@kdesignable/react'
+import { TextWidget } from '@quality-designable/react'
 import { Button, Input, InputNumber, Popover, Select } from 'antd'
 import React from 'react'
 import { MonacoInput } from '../MonacoInput'

@@ -1,4 +1,4 @@
-import { EventContainer, ICustomEvent, uid } from '@kdesignable/shared'
+import { EventContainer, ICustomEvent, uid } from '@quality-designable/shared'
 import {
   HistoryGotoEvent,
   HistoryPushEvent,

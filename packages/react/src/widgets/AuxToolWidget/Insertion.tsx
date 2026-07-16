@@ -1,5 +1,5 @@
 import { observer } from '@formily/reactive-react'
-import { ClosestPosition } from '@kdesignable/core'
+import { ClosestPosition } from '@quality-designable/core'
 import React from 'react'
 import { useMoveHelper, usePrefix } from '../../hooks'
 

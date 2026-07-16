@@ -1,4 +1,4 @@
-import { IconWidget, usePrefix } from '@kdesignable/react'
+import { IconWidget, usePrefix } from '@quality-designable/react'
 import { Input, type InputProps, Upload } from 'antd'
 import cls from 'classnames'
 import React, { useContext } from 'react'

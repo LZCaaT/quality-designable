@@ -1,4 +1,4 @@
-import { IconWidget, usePrefix } from '@kdesignable/react'
+import { IconWidget, usePrefix } from '@quality-designable/react'
 import { Button } from 'antd'
 import cls from 'classnames'
 import React, { useEffect, useRef, useState } from 'react'

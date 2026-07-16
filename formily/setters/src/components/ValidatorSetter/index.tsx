@@ -6,9 +6,9 @@ import {
   SchemaContext,
   useField,
 } from '@formily/react'
-import { GlobalRegistry } from '@kdesignable/core'
-import { FoldItem } from '@kdesignable/react-settings-form'
-import { ArrayItems } from '@potop/formily-antd-v6'
+import { GlobalRegistry } from '@quality-designable/core'
+import { FoldItem } from '@quality-designable/react-settings-form'
+import { ArrayItems } from '@quality-formily/antd-v6'
 import { Select } from 'antd'
 import React from 'react'
 

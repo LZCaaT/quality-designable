@@ -1,7 +1,12 @@
 import { parse, parseExpression } from '@babel/parser'
-import { IconWidget, TextWidget, usePrefix, useTheme } from '@kdesignable/react'
-import { uid } from '@kdesignable/shared'
 import Editor, { EditorProps, loader } from '@monaco-editor/react'
+import {
+  IconWidget,
+  TextWidget,
+  usePrefix,
+  useTheme,
+} from '@quality-designable/react'
+import { uid } from '@quality-designable/shared'
 import { Tooltip } from 'antd'
 import cls from 'classnames'
 import * as monaco from 'monaco-editor/esm/vs/editor/editor.api'

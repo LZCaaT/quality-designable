@@ -1,5 +1,5 @@
 import { ResizeObserver } from '@juggle/resize-observer'
-import { EventDriver, globalThisPolyfill } from '@kdesignable/shared'
+import { EventDriver, globalThisPolyfill } from '@quality-designable/shared'
 import { ViewportResizeEvent } from '../events'
 import { Engine } from '../models/Engine'
 

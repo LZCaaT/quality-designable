@@ -5,8 +5,8 @@ import {
   CursorStatus,
   DragMoveEvent,
   TreeNode,
-} from '@kdesignable/core'
-import { isFn } from '@kdesignable/shared'
+} from '@quality-designable/core'
+import { isFn } from '@quality-designable/shared'
 import cls from 'classnames'
 import React, { useContext, useEffect, useRef } from 'react'
 import {

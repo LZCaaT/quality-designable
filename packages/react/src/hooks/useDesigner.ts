@@ -1,5 +1,5 @@
-import { Engine } from '@kdesignable/core'
-import { globalThisPolyfill, isFn } from '@kdesignable/shared'
+import { Engine } from '@quality-designable/core'
+import { globalThisPolyfill, isFn } from '@quality-designable/shared'
 import { useContext, useEffect } from 'react'
 import { DesignerEngineContext } from '../context'
 export interface IEffects {

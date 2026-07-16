@@ -1,4 +1,4 @@
-import { createLocales } from '@kdesignable/core'
+import { createLocales } from '@quality-designable/core'
 import { DatePicker } from './DatePicker'
 
 export const TimePicker = createLocales(DatePicker, {

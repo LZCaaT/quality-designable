@@ -1,5 +1,5 @@
 import { observer } from '@formily/reactive-react'
-import { CursorType, ScreenType } from '@kdesignable/core'
+import { CursorType, ScreenType } from '@quality-designable/core'
 import { Button, InputNumber, Space } from 'antd'
 import cls from 'classnames'
 import React, { Fragment, useRef } from 'react'

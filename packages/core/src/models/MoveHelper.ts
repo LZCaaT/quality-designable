@@ -6,7 +6,7 @@ import {
   isNearAfter,
   isPointInRect,
   Rect,
-} from '@kdesignable/shared'
+} from '@quality-designable/shared'
 import { DragNodeEvent, DropNodeEvent } from '../events'
 import { CursorDragType } from './Cursor'
 import { Operation } from './Operation'

@@ -1,4 +1,4 @@
-import { Engine, GlobalRegistry } from '@kdesignable/core'
+import { Engine, GlobalRegistry } from '@quality-designable/core'
 import React, { PropsWithChildren, useEffect, useRef } from 'react'
 import { DesignerEngineContext } from '../context'
 import { useDesigner } from '../hooks'

@@ -1,5 +1,8 @@
 import { observer } from '@formily/reactive-react'
-import { DroppableWidget, IDroppableWidgetProps } from '@kdesignable/react'
+import {
+  DroppableWidget,
+  IDroppableWidgetProps,
+} from '@quality-designable/react'
 import React, { PropsWithChildren } from 'react'
 import './styles.scss'
 

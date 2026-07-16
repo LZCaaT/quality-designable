@@ -3,7 +3,7 @@ import {
   calcExtendsLineSegmentOfRect,
   LineSegment,
   Rect,
-} from '@kdesignable/shared'
+} from '@quality-designable/shared'
 import { SnapLine } from './SnapLine'
 import { TransformHelper } from './TransformHelper'
 import { TreeNode } from './TreeNode'

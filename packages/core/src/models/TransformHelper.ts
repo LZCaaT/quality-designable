@@ -15,7 +15,7 @@ import {
   calcSpaceBlockOfRect,
   isEqualRect,
   isLineSegment,
-} from '@kdesignable/shared'
+} from '@quality-designable/shared'
 import { CursorDragType } from './Cursor'
 import { Operation } from './Operation'
 import { ISnapLine, SnapLine } from './SnapLine'

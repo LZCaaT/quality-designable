@@ -1,13 +1,13 @@
 {
-  "name": "@kdesignable/shared",
-  "version": "1.0.1",
-  "homepage": "https://github.com/potop/kdesignable#readme",
+  "name": "@quality-designable/shared",
+  "version": "0.1.0-alpha.0",
+  "homepage": "https://github.com/LZCaaT/quality-designable#readme",
   "bugs": {
-    "url": "https://github.com/potop/kdesignable/issues"
+    "url": "https://github.com/LZCaaT/quality-designable/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/potop/kdesignable.git"
+    "url": "git+https://github.com/LZCaaT/quality-designable.git"
   },
   "license": "MIT",
   "main": "lib",
@@ -28,6 +28,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "gitHead": "24881b52a153055405724f967b90f50801ffc618"
+  }
 }

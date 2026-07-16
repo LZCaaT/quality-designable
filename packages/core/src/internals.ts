@@ -1,4 +1,8 @@
-import { each, globalThisPolyfill, isPlainObj } from '@kdesignable/shared'
+import {
+  each,
+  globalThisPolyfill,
+  isPlainObj,
+} from '@quality-designable/shared'
 
 export const lowerSnake = (str: string) => {
   return String(str).replace(/\s+/g, '_').toLocaleLowerCase()

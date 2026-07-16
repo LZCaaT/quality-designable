@@ -1,5 +1,9 @@
 import { observer } from '@formily/reactive-react'
-import { ClosestPosition, CursorStatus, TreeNode } from '@kdesignable/core'
+import {
+  ClosestPosition,
+  CursorStatus,
+  TreeNode,
+} from '@quality-designable/core'
 import cls from 'classnames'
 import React, { Fragment } from 'react'
 import {

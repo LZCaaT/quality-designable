@@ -11,7 +11,7 @@ import {
   isRectInRect,
   Rect,
   requestIdle,
-} from '@kdesignable/shared'
+} from '@quality-designable/shared'
 import { Engine } from './Engine'
 import { TreeNode } from './TreeNode'
 import { Workspace } from './Workspace'

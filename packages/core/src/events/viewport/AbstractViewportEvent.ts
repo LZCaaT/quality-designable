@@ -1,4 +1,4 @@
-import { globalThisPolyfill } from '@kdesignable/shared'
+import { globalThisPolyfill } from '@quality-designable/shared'
 import { IEngineContext } from '../../types'
 
 export interface IViewportEventData {

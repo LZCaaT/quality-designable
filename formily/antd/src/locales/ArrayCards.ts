@@ -1,4 +1,4 @@
-import { createLocales } from '@kdesignable/core'
+import { createLocales } from '@quality-designable/core'
 import { Card } from './Card'
 
 export const ArrayCards = createLocales(Card, {

@@ -15,7 +15,7 @@
     "downlevelIteration": true,
     "baseUrl": ".",
     "paths": {
-      "@kdesignable/*": ["./packages/*/src"]
+      "@quality-designable/*": ["./packages/*/src"]
     }
   }
 }

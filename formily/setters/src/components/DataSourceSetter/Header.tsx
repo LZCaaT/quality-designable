@@ -1,5 +1,5 @@
 import { observer } from '@formily/reactive-react'
-import { usePrefix } from '@kdesignable/react'
+import { usePrefix } from '@quality-designable/react'
 import React, { ReactNode } from 'react'
 import './styles.scss'
 

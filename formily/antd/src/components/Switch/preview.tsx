@@ -1,5 +1,5 @@
-import { createBehavior, createResource } from '@kdesignable/core'
-import { DnFC } from '@kdesignable/react'
+import { createBehavior, createResource } from '@quality-designable/core'
+import { DnFC } from '@quality-designable/react'
 import { Switch as AntdSwitch } from 'antd'
 import React from 'react'
 import { AllLocales } from '../../locales'

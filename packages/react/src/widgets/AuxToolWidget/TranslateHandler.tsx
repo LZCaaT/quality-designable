@@ -1,4 +1,4 @@
-import { TreeNode } from '@kdesignable/core'
+import { TreeNode } from '@quality-designable/core'
 import cls from 'classnames'
 import React from 'react'
 import { useDesigner, usePrefix } from '../../hooks'

@@ -1,5 +1,5 @@
 import { observer } from '@formily/reactive-react'
-import { TreeNode } from '@kdesignable/core'
+import { TreeNode } from '@quality-designable/core'
 import React, { Fragment } from 'react'
 import {
   useCursor,
@@ -16,6 +16,7 @@ import { TranslateHandler } from './TranslateHandler'
 export interface ISelectionBoxProps {
   node: TreeNode
   showHelpers: boolean
+  hidden?: boolean
 }
 
 export const SelectionBox: React.FC<ISelectionBoxProps> = (props) => {
@@ -30,6 +31,8 @@ export const SelectionBox: React.FC<ISelectionBoxProps> = (props) => {
       left: 0,
       boxSizing: 'border-box',
       zIndex: 4,
+      pointerEvents: props.hidden ? 'none' : undefined,
+      visibility: props.hidden ? 'hidden' : undefined,
     }
     if (nodeRect) {
       baseStyle.transform = `perspective(1px) translate3d(${nodeRect.x}px,${nodeRect.y}px,0)`
@@ -63,7 +66,8 @@ export const Selection = observer(() => {
   const tree = useTree()
   const cursor = useCursor()
   const viewportMoveHelper = useMoveHelper()
-  if (cursor.status !== 'NORMAL' && viewportMoveHelper.touchNode) return null
+  const hidden =
+    cursor.status !== 'NORMAL' && Boolean(viewportMoveHelper.touchNode)
   return (
     <Fragment>
       {selection.selected.map((id) => {
@@ -74,6 +78,7 @@ export const Selection = observer(() => {
           <SelectionBox
             key={id}
             node={node}
+            hidden={hidden}
             showHelpers={selection.selected.length === 1}
           />
         )

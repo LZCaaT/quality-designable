@@ -1,5 +1,5 @@
 import { action, define, observable } from '@formily/reactive'
-import { isArr, isStr } from '@kdesignable/shared'
+import { isArr, isStr } from '@quality-designable/shared'
 import { SelectNodeEvent, UnSelectNodeEvent } from '../events'
 import { Operation } from './Operation'
 import { TreeNode } from './TreeNode'

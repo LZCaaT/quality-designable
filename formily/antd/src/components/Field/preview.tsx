@@ -10,15 +10,15 @@ import {
 } from '@formily/react'
 import { toJS } from '@formily/reactive'
 import { each, reduce } from '@formily/shared'
-import { createBehavior } from '@kdesignable/core'
+import { createBehavior } from '@quality-designable/core'
 import {
   DnFC,
   useComponents,
   useDesigner,
   useTreeNode,
-} from '@kdesignable/react'
-import { isArr, isStr } from '@kdesignable/shared'
-import { FormItem } from '@potop/formily-antd-v6'
+} from '@quality-designable/react'
+import { isArr, isStr } from '@quality-designable/shared'
+import { FormItem } from '@quality-formily/antd-v6'
 import React from 'react'
 import { Container } from '../../common/Container'
 import { AllLocales } from '../../locales'

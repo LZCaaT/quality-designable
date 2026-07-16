@@ -5,11 +5,11 @@ import {
   DragStartEvent,
   DragStopEvent,
   Engine,
-} from '@kdesignable/core'
+} from '@quality-designable/core'
 import {
   calcSpeedFactor,
   createUniformSpeedAnimation,
-} from '@kdesignable/shared'
+} from '@quality-designable/shared'
 import React, { useRef } from 'react'
 import { useDesigner, usePrefix, useScreen } from '../../hooks'
 import { IconWidget } from '../../widgets'

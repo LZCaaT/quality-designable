@@ -1,4 +1,4 @@
-import { EventDriver } from '@kdesignable/shared'
+import { EventDriver } from '@quality-designable/shared'
 import { MouseMoveEvent } from '../events'
 import { Engine } from '../models/Engine'
 export class MouseMoveDriver extends EventDriver<Engine> {

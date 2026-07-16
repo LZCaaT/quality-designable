@@ -1,12 +1,16 @@
 import { observer } from '@formily/react'
-import { TreeNode, createBehavior, createResource } from '@kdesignable/core'
+import {
+  TreeNode,
+  createBehavior,
+  createResource,
+} from '@quality-designable/core'
 import {
   DnFC,
   DroppableWidget,
   TreeNodeWidget,
   useNodeIdProps,
   useTreeNode,
-} from '@kdesignable/react'
+} from '@quality-designable/react'
 import { Tabs, type TabsProps } from 'antd'
 import React, { Fragment, useState } from 'react'
 import { LoadTemplate } from '../../common/LoadTemplate'

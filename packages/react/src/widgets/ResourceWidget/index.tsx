@@ -4,8 +4,8 @@ import {
   IResourceLike,
   isResourceHost,
   isResourceList,
-} from '@kdesignable/core'
-import { isFn } from '@kdesignable/shared'
+} from '@quality-designable/core'
+import { isFn } from '@quality-designable/shared'
 import cls from 'classnames'
 import React, { useState } from 'react'
 import { usePrefix } from '../../hooks'

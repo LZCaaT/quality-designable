@@ -15,7 +15,7 @@ import {
   Space,
   Switch,
   TimePicker,
-} from '@potop/formily-antd-v6'
+} from '@quality-formily/antd-v6'
 import { Slider } from 'antd'
 import React from 'react'
 import {

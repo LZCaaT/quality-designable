@@ -1,4 +1,4 @@
-import { createLocales } from '@kdesignable/core'
+import { createLocales } from '@quality-designable/core'
 import { Input } from './Input'
 
 export const Password = createLocales(Input, {

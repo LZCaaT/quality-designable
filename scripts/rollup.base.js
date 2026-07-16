@@ -1,10 +1,10 @@
 import commonjs from '@rollup/plugin-commonjs'
+import typescript from '@rollup/plugin-typescript'
 import path from 'path'
 import externalGlobals from 'rollup-plugin-external-globals'
 import resolve from 'rollup-plugin-node-resolve'
 import postcss from 'rollup-plugin-postcss'
 import { terser } from 'rollup-plugin-terser'
-import typescript from 'rollup-plugin-typescript2'
 
 const presets = () => {
   const externals = {
@@ -26,24 +26,24 @@ const presets = () => {
     '@formily/core': 'Formily.Core',
     '@formily/json-schema': 'Formily.JSONSchema',
     '@formily/react': 'Formily.React',
-    '@potop/formily-antd-v6': 'Formily.AntdV6',
-    '@kdesignable/shared': 'Designable.Shared',
-    '@kdesignable/core': 'Designable.Core',
-    '@kdesignable/react': 'Designable.React',
-    '@kdesignable/react-sandbox': 'Designable.ReactSandbox',
-    '@kdesignable/react-settings-form': 'Designable.ReactSettingsForm',
+    '@quality-formily/antd-v6': 'Formily.AntdV6',
+    '@quality-designable/shared': 'Designable.Shared',
+    '@quality-designable/core': 'Designable.Core',
+    '@quality-designable/react': 'Designable.React',
+    '@quality-designable/react-sandbox': 'Designable.ReactSandbox',
+    '@quality-designable/react-settings-form': 'Designable.ReactSettingsForm',
   }
   return [
+    resolve({
+      extensions: ['.mjs', '.js', '.json', '.node', '.jsx', '.ts', '.tsx'],
+    }),
     typescript({
       tsconfig: './tsconfig.json',
-      tsconfigOverride: {
-        compilerOptions: {
-          module: 'ESNext',
-          declaration: false,
-        },
+      compilerOptions: {
+        module: 'ESNext',
+        declaration: false,
       },
     }),
-    resolve(),
     postcss({
       extract: true,
       minimize: true,

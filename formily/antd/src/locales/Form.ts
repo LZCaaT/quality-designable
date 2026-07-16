@@ -1,4 +1,4 @@
-import { createLocales } from '@kdesignable/core'
+import { createLocales } from '@quality-designable/core'
 import { Component } from './Component'
 
 export const Form = createLocales(Component, {

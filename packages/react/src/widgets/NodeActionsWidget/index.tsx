@@ -33,7 +33,7 @@ export const NodeActionsWidget: React.FC<
   return (
     <div className={cls(prefix, props.className)} style={props.style}>
       <div className={prefix + '-content'}>
-        <Space split={<Divider type="vertical" />}>{children}</Space>
+        <Space separator={<Divider vertical />}>{children}</Space>
       </div>
     </div>
   )

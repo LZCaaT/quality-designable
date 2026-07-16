@@ -1,4 +1,4 @@
-import { TreeNode } from '@kdesignable/core'
+import { TreeNode } from '@quality-designable/core'
 import { useDesigner } from './useDesigner'
 import { useTreeNode } from './useTreeNode'
 

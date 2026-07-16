@@ -1,4 +1,4 @@
-import { ICustomEvent } from '@kdesignable/shared'
+import { ICustomEvent } from '@quality-designable/shared'
 import { AbstractMutationNodeEvent } from './AbstractMutationNodeEvent'
 
 export class HoverNodeEvent

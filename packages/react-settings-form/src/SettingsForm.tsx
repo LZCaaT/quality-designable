@@ -8,9 +8,9 @@ import {
   useSelected,
   useSelectedNode,
   useWorkbench,
-} from '@kdesignable/react'
-import { cancelIdle, requestIdle } from '@kdesignable/shared'
-import { Form } from '@potop/formily-antd-v6'
+} from '@quality-designable/react'
+import { cancelIdle, requestIdle } from '@quality-designable/shared'
+import { Form } from '@quality-formily/antd-v6'
 import { Empty } from 'antd'
 import cls from 'classnames'
 import React, { useMemo } from 'react'

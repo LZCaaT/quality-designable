@@ -1,4 +1,4 @@
-import { KeyCode, Point } from '@kdesignable/shared'
+import { KeyCode, Point } from '@quality-designable/shared'
 import { MouseClickEvent } from '../events'
 import { CursorStatus, Engine } from '../models'
 

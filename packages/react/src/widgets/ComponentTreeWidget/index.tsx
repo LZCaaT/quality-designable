@@ -1,5 +1,5 @@
 import { observer } from '@formily/reactive-react'
-import { GlobalRegistry, TreeNode } from '@kdesignable/core'
+import { GlobalRegistry, TreeNode } from '@quality-designable/core'
 import cls from 'classnames'
 import React, { Fragment, useEffect } from 'react'
 import { DesignerComponentsContext, TreeNodeContext } from '../../context'

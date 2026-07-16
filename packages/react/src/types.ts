@@ -1,4 +1,4 @@
-import { Engine, IBehavior, IResource } from '@kdesignable/core'
+import { Engine, IBehavior, IResource } from '@quality-designable/core'
 import React from 'react'
 
 export interface IDesignerLayoutProps {

@@ -1,5 +1,5 @@
 import { observer, useField } from '@formily/react'
-import { usePrefix } from '@kdesignable/react'
+import { usePrefix } from '@quality-designable/react'
 import cls from 'classnames'
 import React from 'react'
 import { ColorInput } from '../ColorInput'

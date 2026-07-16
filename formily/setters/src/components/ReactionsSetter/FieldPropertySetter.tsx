@@ -1,6 +1,6 @@
 import { isPlainObj, reduce } from '@formily/shared'
-import { TextWidget, usePrefix } from '@kdesignable/react'
-import { MonacoInput } from '@kdesignable/react-settings-form'
+import { TextWidget, usePrefix } from '@quality-designable/react'
+import { MonacoInput } from '@quality-designable/react-settings-form'
 import { Menu } from 'antd'
 import React, { useState } from 'react'
 import { FieldProperties } from './properties'
@@ -60,9 +60,7 @@ export const FieldPropertySetter: React.FC<IFieldPropertySetterProps> = (
     }
     return {
       key: key as string,
-      label: (
-        <TextWidget token={`SettingComponents.ReactionsSetter.${key}`} />
-      ),
+      label: <TextWidget token={`SettingComponents.ReactionsSetter.${key}`} />,
     }
   })
 

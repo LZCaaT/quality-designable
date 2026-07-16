@@ -1,6 +1,6 @@
 import { observer } from '@formily/reactive-react'
-import { ScreenType } from '@kdesignable/core'
-import { requestIdle } from '@kdesignable/shared'
+import { ScreenType } from '@quality-designable/core'
+import { requestIdle } from '@quality-designable/shared'
 import React from 'react'
 import { useScreen } from '../hooks'
 import {

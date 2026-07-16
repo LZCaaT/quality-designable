@@ -1,4 +1,4 @@
-import { ICustomEvent } from '@kdesignable/shared'
+import { ICustomEvent } from '@quality-designable/shared'
 import { AbstractWorkspaceEvent } from './AbstractWorkspaceEvent'
 export class AddWorkspaceEvent
   extends AbstractWorkspaceEvent

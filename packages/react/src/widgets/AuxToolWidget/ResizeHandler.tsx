@@ -1,4 +1,4 @@
-import { TreeNode } from '@kdesignable/core'
+import { TreeNode } from '@quality-designable/core'
 import cls from 'classnames'
 import React from 'react'
 import { useDesigner, usePrefix } from '../../hooks'
@@ -27,9 +27,9 @@ export const ResizeHandler: React.FC<IResizeHandlerProps> = (props) => {
       {allowY && <div {...createHandler('center-top')}></div>}
       {allowY && <div {...createHandler('center-bottom')}></div>}
       {allowX && allowY && <div {...createHandler('left-top')}></div>}
-      {allowY && allowY && <div {...createHandler('right-top')}></div>}
+      {allowX && allowY && <div {...createHandler('right-top')}></div>}
       {allowX && allowY && <div {...createHandler('left-bottom')}></div>}
-      {allowY && allowY && <div {...createHandler('right-bottom')}></div>}
+      {allowX && allowY && <div {...createHandler('right-bottom')}></div>}
     </>
   )
 }

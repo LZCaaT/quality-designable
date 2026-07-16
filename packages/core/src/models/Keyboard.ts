@@ -1,5 +1,5 @@
 import { action, define, observable } from '@formily/reactive'
-import { KeyCode } from '@kdesignable/shared'
+import { KeyCode } from '@quality-designable/shared'
 import { AbstractKeyboardEvent } from '../events/keyboard/AbstractKeyboardEvent'
 import { IEngineContext } from '../types'
 import { Engine } from './Engine'

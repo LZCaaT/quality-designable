@@ -1,4 +1,4 @@
-import { EventDriver, globalThisPolyfill } from '@kdesignable/shared'
+import { EventDriver, globalThisPolyfill } from '@quality-designable/shared'
 import { ViewportScrollEvent } from '../events'
 import { Engine } from '../models/Engine'
 

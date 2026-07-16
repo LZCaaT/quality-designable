@@ -1,4 +1,4 @@
-import { EventDriver } from '@kdesignable/shared'
+import { EventDriver } from '@quality-designable/shared'
 import { MouseClickEvent, MouseDoubleClickEvent } from '../events'
 import { Engine } from '../models/Engine'
 

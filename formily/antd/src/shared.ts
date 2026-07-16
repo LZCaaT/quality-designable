@@ -1,4 +1,4 @@
-import { Engine, TreeNode } from '@kdesignable/core'
+import { Engine, TreeNode } from '@quality-designable/core'
 
 export type ComponentNameMatcher =
   | string

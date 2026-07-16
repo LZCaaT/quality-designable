@@ -1,6 +1,6 @@
 import { observer } from '@formily/reactive-react'
-import { ITreeNode, TreeNode, WorkbenchTypes } from '@kdesignable/core'
-import { requestIdle } from '@kdesignable/shared'
+import { ITreeNode, TreeNode, WorkbenchTypes } from '@quality-designable/core'
+import { requestIdle } from '@quality-designable/shared'
 import React, { useEffect, useState } from 'react'
 import { Viewport } from '../containers'
 import { useTree, useWorkbench } from '../hooks'

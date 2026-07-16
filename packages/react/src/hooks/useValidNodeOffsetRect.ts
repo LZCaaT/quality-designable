@@ -1,5 +1,9 @@
-import { CursorDragType, CursorStatus, TreeNode } from '@kdesignable/core'
-import { LayoutObserver } from '@kdesignable/shared'
+import {
+  CursorDragType,
+  CursorStatus,
+  TreeNode,
+} from '@quality-designable/core'
+import { LayoutObserver } from '@quality-designable/shared'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useDesigner } from './useDesigner'
 import { useViewport } from './useViewport'
@@ -19,7 +23,7 @@ export const useValidNodeOffsetRect = (node: TreeNode) => {
   const [, forceUpdate] = useState(null)
   const rectRef = useMemo(
     () => ({ current: viewport.getValidNodeOffsetRect(node) }),
-    [viewport]
+    [viewport, node]
   )
 
   const element = viewport.findElementById(node?.id)
@@ -35,14 +39,52 @@ export const useValidNodeOffsetRect = (node: TreeNode) => {
       rectRef.current = nextRect
       forceUpdate([])
     }
-  }, [viewport, node])
+  }, [engine, viewport, node])
 
   useEffect(() => {
     const layoutObserver = new LayoutObserver(compute)
-    if (element) layoutObserver.observe(element)
-    return () => {
-      layoutObserver.disconnect()
+    const frameIds = new Set<number>()
+    let scheduleToken = 0
+    const scheduleCompute = () => {
+      scheduleToken += 1
+      const token = scheduleToken
+      ;[0, 1, 2, 4].forEach((delay) => {
+        const run = (frames: number) => {
+          const frameId = window.requestAnimationFrame(() => {
+            frameIds.delete(frameId)
+            if (token !== scheduleToken) return
+            if (frames > 0) return run(frames - 1)
+            compute()
+          })
+          frameIds.add(frameId)
+        }
+        run(delay)
+      })
     }
-  }, [node, viewport, element])
+    const unsubscribe = engine.subscribeWith(
+      [
+        'drag:stop',
+        'drop:node',
+        'select:node',
+        'append:node',
+        'insert:after',
+        'insert:before',
+        'prepend:node',
+        'update:children',
+        'update:node:props',
+        'viewport:scroll',
+        'viewport:resize',
+      ],
+      scheduleCompute
+    )
+    if (element) layoutObserver.observe(element)
+    scheduleCompute()
+    return () => {
+      scheduleToken += 1
+      unsubscribe()
+      layoutObserver.disconnect()
+      frameIds.forEach((frameId) => window.cancelAnimationFrame(frameId))
+    }
+  }, [compute, element, engine])
   return rectRef.current
 }

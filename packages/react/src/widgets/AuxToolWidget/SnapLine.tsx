@@ -1,5 +1,5 @@
 import { observer } from '@formily/reactive-react'
-import { CursorStatus } from '@kdesignable/core'
+import { CursorStatus } from '@quality-designable/core'
 import React from 'react'
 import { useCursor, usePrefix, useTransformHelper } from '../../hooks'
 

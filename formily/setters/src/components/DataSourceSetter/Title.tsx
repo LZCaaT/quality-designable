@@ -1,6 +1,6 @@
 import { observer } from '@formily/reactive-react'
 import { clone, toArr } from '@formily/shared'
-import { IconWidget, TextWidget, usePrefix } from '@kdesignable/react'
+import { IconWidget, TextWidget, usePrefix } from '@quality-designable/react'
 import React from 'react'
 import { traverseTree } from './shared'
 import './styles.scss'

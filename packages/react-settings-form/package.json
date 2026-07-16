@@ -1,13 +1,13 @@
 {
-  "name": "@kdesignable/react-settings-form",
-  "version": "1.0.1",
-  "homepage": "https://github.com/potop/kdesignable#readme",
+  "name": "@quality-designable/react-settings-form",
+  "version": "0.1.0-alpha.0",
+  "homepage": "https://github.com/LZCaaT/quality-designable#readme",
   "bugs": {
-    "url": "https://github.com/potop/kdesignable/issues"
+    "url": "https://github.com/LZCaaT/quality-designable/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/potop/kdesignable.git"
+    "url": "git+https://github.com/LZCaaT/quality-designable.git"
   },
   "license": "MIT",
   "main": "lib",
@@ -21,10 +21,10 @@
   },
   "dependencies": {
     "@babel/parser": "^7.14.7",
-    "@kdesignable/core": "1.0.1",
-    "@kdesignable/react": "1.0.1",
-    "@kdesignable/shared": "1.0.1",
     "@monaco-editor/react": "^4.7.0",
+    "@quality-designable/core": "0.1.0-alpha.0",
+    "@quality-designable/react": "0.1.0-alpha.0",
+    "@quality-designable/shared": "0.1.0-alpha.0",
     "monaco-editor": "^0.55.1",
     "prettier": "^2.3.2",
     "react-tiny-popover": "^8.1.6"
@@ -34,7 +34,7 @@
     "@formily/reactive": "^2.3.7",
     "@formily/reactive-react": "^2.3.7",
     "@formily/shared": "^2.3.7",
-    "@potop/formily-antd-v6": "2.0.1",
+    "@quality-formily/antd-v6": "file:../../../quality-formily-antd-v6/packages/components",
     "antd": "^6.0.0"
   },
   "peerDependencies": {
@@ -42,7 +42,7 @@
     "@formily/reactive": "^2.3.7",
     "@formily/reactive-react": "^2.3.7",
     "@formily/shared": "^2.3.7",
-    "@potop/formily-antd-v6": "^2.0.1",
+    "@quality-formily/antd-v6": "^0.1.0-0",
     "antd": "^6.0.0"
   },
   "engines": {
@@ -51,6 +51,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "gitHead": "24881b52a153055405724f967b90f50801ffc618"
+  }
 }

@@ -1,4 +1,4 @@
-import { createLocales } from '@kdesignable/core'
+import { createLocales } from '@quality-designable/core'
 
 export const DatePicker = {
   'zh-CN': {

@@ -3,7 +3,7 @@ import {
   ICustomEvent,
   isFn,
   requestIdle,
-} from '@kdesignable/shared'
+} from '@quality-designable/shared'
 import { Engine } from './Engine'
 import { Hover } from './Hover'
 import { MoveHelper } from './MoveHelper'

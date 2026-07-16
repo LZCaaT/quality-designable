@@ -1,4 +1,4 @@
-import { ICustomEvent } from '@kdesignable/shared'
+import { ICustomEvent } from '@quality-designable/shared'
 import { AbstractHistoryEvent } from './AbstractHistoryEvent'
 
 export class HistoryPushEvent

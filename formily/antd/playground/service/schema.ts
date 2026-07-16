@@ -1,16 +1,15 @@
-import { Engine } from '@kdesignable/core'
+import { Engine } from '@quality-designable/core'
 import {
   transformToSchema,
   transformToTreeNode,
-} from '@kdesignable/formily-transformer'
-import { message } from 'antd'
+} from '@quality-designable/formily-transformer'
 
-export const saveSchema = (designer: Engine) => {
+export const saveSchema = (designer: Engine, onSuccess?: () => void) => {
   localStorage.setItem(
     'formily-schema',
     JSON.stringify(transformToSchema(designer.getCurrentTree()))
   )
-  message.success('Save Success')
+  onSuccess?.()
 }
 
 export const loadInitialSchema = (designer: Engine) => {

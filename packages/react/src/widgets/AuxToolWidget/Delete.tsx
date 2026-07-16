@@ -1,4 +1,4 @@
-import { TreeNode } from '@kdesignable/core'
+import { TreeNode } from '@quality-designable/core'
 import { Button } from 'antd'
 import React from 'react'
 import { usePrefix } from '../../hooks'

@@ -1,5 +1,5 @@
 import { ISchema } from '@formily/json-schema'
-import { Event, IEventProps } from '@kdesignable/shared'
+import { Event, IEventProps } from '@quality-designable/shared'
 import {
   Engine,
   ITreeNode,

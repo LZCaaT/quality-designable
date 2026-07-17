@@ -1,5 +1,4 @@
-$root-entry-name: 'default';
-//$import (reference) '~antd/es/style/themes/index.less';
+@use '../../variables' as *;
 
 .dn-data-source-setter {
   ::-webkit-scrollbar {
@@ -34,7 +33,7 @@ $root-entry-name: 'default';
   &-layout {
     display: flex;
     justify-content: space-around;
-    //border: 1px solid $border-color-split;
+    border: 1px solid $border-color-split;
     border-radius: 3px;
 
     .ant-tree-treenode {
@@ -53,7 +52,7 @@ $root-entry-name: 'default';
 
       &.left {
         width: 40%;
-        //border-right: 1px solid $border-color-split;
+        border-right: 1px solid $border-color-split;
       }
 
       &.right {
@@ -67,7 +66,7 @@ $root-entry-name: 'default';
         justify-content: space-between;
         height: 40px;
         padding: 8px 12px 9px;
-        //border-bottom: 1px solid $border-color-split;
+        border-bottom: 1px solid $border-color-split;
         border-radius: 2px 2px 0 0;
       }
 

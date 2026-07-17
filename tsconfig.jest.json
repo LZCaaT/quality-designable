@@ -2,8 +2,9 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "jsx": "react",
+    "sourceMap": true,
     "paths": {
-      "@kdesignable/*": ["./packages/*/src"]
+      "@designable-next/*": ["./packages/*/src"]
     }
   },
   "exclude": ["./packages/*/esm", "./packages/*/lib"]

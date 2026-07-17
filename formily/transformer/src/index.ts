@@ -1,6 +1,6 @@
+import { ITreeNode } from '@designable-next/core'
+import { clone, uid } from '@designable-next/shared'
 import { ISchema, Schema } from '@formily/json-schema'
-import { ITreeNode } from '@kdesignable/core'
-import { clone, uid } from '@kdesignable/shared'
 
 export interface ITransformerOptions {
   designableFieldName?: string

@@ -1,4 +1,4 @@
-import { createBehavior } from '@kdesignable/core'
+import { createBehavior } from '@designable-next/core'
 import { AllLocales } from '../../locales'
 import { AllSchemas } from '../../schemas'
 import { createFieldSchema, createVoidFieldSchema } from '../Field'

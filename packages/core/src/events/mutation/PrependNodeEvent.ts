@@ -1,4 +1,4 @@
-import { ICustomEvent } from '@kdesignable/shared'
+import { ICustomEvent } from '@designable-next/shared'
 import { AbstractMutationNodeEvent } from './AbstractMutationNodeEvent'
 
 export class PrependNodeEvent

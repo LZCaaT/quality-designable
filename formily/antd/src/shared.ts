@@ -1,4 +1,4 @@
-import { Engine, TreeNode } from '@kdesignable/core'
+import { Engine, TreeNode } from '@designable-next/core'
 
 export type ComponentNameMatcher =
   | string

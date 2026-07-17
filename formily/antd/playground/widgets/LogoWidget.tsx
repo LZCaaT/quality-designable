@@ -1,4 +1,4 @@
-import { useTheme } from '@kdesignable/react'
+import { useTheme } from '@designable-next/react'
 import React from 'react'
 
 const logo = {

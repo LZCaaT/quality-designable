@@ -1,5 +1,5 @@
-import { createBehavior, createResource } from '@kdesignable/core'
-import { DnFC } from '@kdesignable/react'
+import { createBehavior, createResource } from '@designable-next/core'
+import { DnFC } from '@designable-next/react'
 import { Slider as AntdSlider } from 'antd'
 import React from 'react'
 import { AllLocales } from '../../locales'

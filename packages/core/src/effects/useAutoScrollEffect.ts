@@ -4,7 +4,7 @@ import {
   IPoint,
   Point,
   scrollAnimate,
-} from '@kdesignable/shared'
+} from '@designable-next/shared'
 import { DragMoveEvent, DragStartEvent, DragStopEvent } from '../events'
 import { CursorStatus, Engine, Viewport } from '../models'
 

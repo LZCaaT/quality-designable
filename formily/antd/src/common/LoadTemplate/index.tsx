@@ -1,4 +1,4 @@
-import { NodeActionsWidget } from '@kdesignable/react'
+import { NodeActionsWidget } from '@designable-next/react'
 import React from 'react'
 
 export interface ITemplateAction {

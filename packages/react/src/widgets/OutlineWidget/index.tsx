@@ -1,6 +1,6 @@
+import { TreeNode, Viewport } from '@designable-next/core'
+import { globalThisPolyfill } from '@designable-next/shared'
 import { observer } from '@formily/reactive-react'
-import { TreeNode, Viewport } from '@kdesignable/core'
-import { globalThisPolyfill } from '@kdesignable/shared'
 import cls from 'classnames'
 import React, { useLayoutEffect, useRef } from 'react'
 import { useOutline, usePrefix, useTree, useWorkbench } from '../../hooks'

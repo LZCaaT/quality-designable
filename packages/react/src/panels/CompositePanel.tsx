@@ -1,4 +1,4 @@
-import { isValid } from '@kdesignable/shared'
+import { isValid } from '@designable-next/shared'
 import cls from 'classnames'
 import React, { PropsWithChildren, useEffect, useRef, useState } from 'react'
 import { usePrefix } from '../hooks'

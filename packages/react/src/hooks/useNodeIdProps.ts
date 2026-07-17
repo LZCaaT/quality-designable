@@ -1,4 +1,4 @@
-import { TreeNode } from '@kdesignable/core'
+import { TreeNode } from '@designable-next/core'
 import { useDesigner } from './useDesigner'
 import { useTreeNode } from './useTreeNode'
 

@@ -1,5 +1,5 @@
+import { IconWidget, usePrefix } from '@designable-next/react'
 import { observer, useField } from '@formily/react'
-import { IconWidget, usePrefix } from '@kdesignable/react'
 import cls from 'classnames'
 import React, { useState } from 'react'
 import './styles.scss'

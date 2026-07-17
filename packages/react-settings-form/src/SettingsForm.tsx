@@ -1,5 +1,4 @@
-import { createForm } from '@formily/core'
-import { observer } from '@formily/react'
+import { Form } from '@designable-next/formily-antd-v6'
 import {
   IconWidget,
   NodePathWidget,
@@ -8,9 +7,10 @@ import {
   useSelected,
   useSelectedNode,
   useWorkbench,
-} from '@kdesignable/react'
-import { cancelIdle, requestIdle } from '@kdesignable/shared'
-import { Form } from '@potop/formily-antd-v6'
+} from '@designable-next/react'
+import { cancelIdle, requestIdle } from '@designable-next/shared'
+import { createForm } from '@formily/core'
+import { observer } from '@formily/react'
 import { Empty } from 'antd'
 import cls from 'classnames'
 import React, { useMemo } from 'react'

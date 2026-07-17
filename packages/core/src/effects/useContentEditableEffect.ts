@@ -1,5 +1,5 @@
+import { globalThisPolyfill, requestIdle } from '@designable-next/shared'
 import { Path } from '@formily/path'
-import { globalThisPolyfill, requestIdle } from '@kdesignable/shared'
 import { MouseClickEvent, MouseDoubleClickEvent } from '../events'
 import { Engine, TreeNode } from '../models'
 

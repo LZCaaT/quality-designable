@@ -3,7 +3,7 @@ import {
   isCrossRectInRect,
   isRectInRect,
   Point,
-} from '@kdesignable/shared'
+} from '@designable-next/shared'
 import { DragStopEvent } from '../events'
 import { CursorDragType, CursorType, Engine, TreeNode } from '../models'
 

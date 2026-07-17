@@ -1,11 +1,11 @@
-import { observer } from '@formily/reactive-react'
 import {
   IResource,
   IResourceLike,
   isResourceHost,
   isResourceList,
-} from '@kdesignable/core'
-import { isFn } from '@kdesignable/shared'
+} from '@designable-next/core'
+import { isFn } from '@designable-next/shared'
+import { observer } from '@formily/reactive-react'
 import cls from 'classnames'
 import React, { useState } from 'react'
 import { usePrefix } from '../../hooks'

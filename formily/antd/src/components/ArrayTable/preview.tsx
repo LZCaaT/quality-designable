@@ -1,13 +1,13 @@
-import { observer } from '@formily/react'
-import { TreeNode, createBehavior, createResource } from '@kdesignable/core'
+import { TreeNode, createBehavior, createResource } from '@designable-next/core'
+import { ArrayBase } from '@designable-next/formily-antd-v6'
 import {
   DnFC,
   DroppableWidget,
   TreeNodeWidget,
   useNodeIdProps,
   useTreeNode,
-} from '@kdesignable/react'
-import { ArrayBase } from '@potop/formily-antd-v6'
+} from '@designable-next/react'
+import { observer } from '@formily/react'
 import { Table, TableProps } from 'antd'
 import cls from 'classnames'
 import React from 'react'

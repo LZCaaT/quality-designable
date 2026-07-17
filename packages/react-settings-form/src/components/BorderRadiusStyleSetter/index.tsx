@@ -1,4 +1,4 @@
-import { IconWidget } from '@kdesignable/react'
+import { IconWidget } from '@designable-next/react'
 import React from 'react'
 import { BoxStyleSetter } from '../BoxStyleSetter'
 export interface IBorderRadiusStyleSetterProps {

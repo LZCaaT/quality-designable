@@ -1,4 +1,3 @@
-import { action, define, observable } from '@formily/reactive'
 import {
   calcDistanceOfPointToRect,
   calcDistancePointToEdge,
@@ -6,7 +5,8 @@ import {
   isNearAfter,
   isPointInRect,
   Rect,
-} from '@kdesignable/shared'
+} from '@designable-next/shared'
+import { action, define, observable } from '@formily/reactive'
 import { DragNodeEvent, DropNodeEvent } from '../events'
 import { CursorDragType } from './Cursor'
 import { Operation } from './Operation'

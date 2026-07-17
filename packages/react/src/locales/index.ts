@@ -1,4 +1,4 @@
-import { GlobalRegistry } from '@kdesignable/core'
+import { GlobalRegistry } from '@designable-next/core'
 import global from './global'
 import icons from './icons'
 import operations from './operations'

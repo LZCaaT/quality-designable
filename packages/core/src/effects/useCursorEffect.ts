@@ -1,4 +1,4 @@
-import { requestIdle } from '@kdesignable/shared'
+import { requestIdle } from '@designable-next/shared'
 import {
   DragMoveEvent,
   DragStartEvent,

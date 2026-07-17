@@ -1,5 +1,5 @@
-import { Workspace } from '@kdesignable/core'
-import { globalThisPolyfill } from '@kdesignable/shared'
+import { Workspace } from '@designable-next/core'
+import { globalThisPolyfill } from '@designable-next/shared'
 import { useContext } from 'react'
 import { WorkspaceContext } from '../context'
 import { useDesigner } from './useDesigner'

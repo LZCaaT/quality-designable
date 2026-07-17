@@ -1,4 +1,4 @@
-import { globalThisPolyfill } from '@kdesignable/shared'
+import { globalThisPolyfill } from '@designable-next/shared'
 import { getNpmCDNRegistry } from '../registry'
 export interface ILoadScriptProps {
   package: string

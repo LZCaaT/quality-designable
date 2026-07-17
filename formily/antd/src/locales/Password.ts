@@ -1,4 +1,4 @@
-import { createLocales } from '@kdesignable/core'
+import { createLocales } from '@designable-next/core'
 import { Input } from './Input'
 
 export const Password = createLocales(Input, {

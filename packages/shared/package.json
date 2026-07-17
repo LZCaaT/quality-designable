@@ -1,18 +1,22 @@
 {
-  "name": "@kdesignable/shared",
-  "version": "1.0.1",
-  "homepage": "https://github.com/potop/kdesignable#readme",
+  "name": "@designable-next/shared",
+  "version": "0.1.0-alpha.2",
+  "homepage": "https://github.com/LZCaaT/quality-designable#readme",
   "bugs": {
-    "url": "https://github.com/potop/kdesignable/issues"
+    "url": "https://github.com/LZCaaT/quality-designable/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/potop/kdesignable.git"
+    "url": "git+https://github.com/LZCaaT/quality-designable.git"
   },
   "license": "MIT",
   "main": "lib",
   "module": "esm",
   "types": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "esm"
+  ],
   "scripts": {
     "build": "rimraf -rf lib esm dist && npm run build:cjs && npm run build:esm && npm run build:umd",
     "build:cjs": "tsc --project tsconfig.build.json",
@@ -28,6 +32,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "gitHead": "24881b52a153055405724f967b90f50801ffc618"
+  }
 }

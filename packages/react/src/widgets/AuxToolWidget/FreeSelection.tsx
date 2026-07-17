@@ -1,6 +1,6 @@
+import { CursorDragType, CursorStatus } from '@designable-next/core'
+import { calcRectByStartEndPoint } from '@designable-next/shared'
 import { observer } from '@formily/reactive-react'
-import { CursorDragType, CursorStatus } from '@kdesignable/core'
-import { calcRectByStartEndPoint } from '@kdesignable/shared'
 import cls from 'classnames'
 import React from 'react'
 import { useCursor, useOperation, usePrefix, useViewport } from '../../hooks'

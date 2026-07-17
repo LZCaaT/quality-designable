@@ -3,7 +3,7 @@ import {
   GlobalRegistry,
   KeyCode,
   Shortcut,
-} from '@kdesignable/core'
+} from '@designable-next/core'
 import {
   ComponentTreeWidget,
   CompositePanel,
@@ -20,11 +20,12 @@ import {
   ViewToolsWidget,
   Workspace,
   WorkspacePanel,
-} from '@kdesignable/react'
+} from '@designable-next/react'
 import {
   setNpmCDNRegistry,
   SettingsForm,
-} from '@kdesignable/react-settings-form'
+} from '@designable-next/react-settings-form'
+import { App as AntdApp } from 'antd'
 import React, { useMemo } from 'react'
 import { createRoot } from 'react-dom/client'
 import {
@@ -78,7 +79,8 @@ GlobalRegistry.registerDesignerLocales({
   },
 })
 
-const App = () => {
+const DesignerApp = () => {
+  const { message } = AntdApp.useApp()
   const engine = useMemo(
     () =>
       createDesigner({
@@ -89,14 +91,14 @@ const App = () => {
               [KeyCode.Control, KeyCode.S],
             ],
             handler(ctx) {
-              saveSchema(ctx.engine)
+              saveSchema(ctx.engine, () => message.success('Save Success'))
             },
           }),
         ],
         rootComponentName: 'Form',
         migrateV5Schema: true,
       }),
-    []
+    [message]
   )
   return (
     <Designer engine={engine}>
@@ -218,5 +220,9 @@ const App = () => {
 const container = document.getElementById('root')
 if (container) {
   const root = createRoot(container)
-  root.render(<App />)
+  root.render(
+    <AntdApp>
+      <DesignerApp />
+    </AntdApp>
+  )
 }

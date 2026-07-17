@@ -1,5 +1,5 @@
+import { isArr } from '@designable-next/shared'
 import { untracked } from '@formily/reactive'
-import { isArr } from '@kdesignable/shared'
 import { mergeLocales } from './internals'
 import { Engine, TreeNode } from './models'
 import { DEFAULT_DRIVERS, DEFAULT_EFFECTS, DEFAULT_SHORTCUTS } from './presets'

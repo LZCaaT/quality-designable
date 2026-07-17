@@ -1,6 +1,11 @@
 import { parse, parseExpression } from '@babel/parser'
-import { IconWidget, TextWidget, usePrefix, useTheme } from '@kdesignable/react'
-import { uid } from '@kdesignable/shared'
+import {
+  IconWidget,
+  TextWidget,
+  usePrefix,
+  useTheme,
+} from '@designable-next/react'
+import { uid } from '@designable-next/shared'
 import Editor, { EditorProps, loader } from '@monaco-editor/react'
 import { Tooltip } from 'antd'
 import cls from 'classnames'

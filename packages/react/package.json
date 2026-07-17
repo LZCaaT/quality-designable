@@ -1,18 +1,22 @@
 {
-  "name": "@kdesignable/react",
-  "version": "1.0.1",
-  "homepage": "https://github.com/potop/kdesignable#readme",
+  "name": "@designable-next/react",
+  "version": "0.1.0-alpha.2",
+  "homepage": "https://github.com/LZCaaT/quality-designable#readme",
   "bugs": {
-    "url": "https://github.com/potop/kdesignable/issues"
+    "url": "https://github.com/LZCaaT/quality-designable/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/potop/kdesignable.git"
+    "url": "git+https://github.com/LZCaaT/quality-designable.git"
   },
   "license": "MIT",
   "main": "lib",
   "module": "esm",
   "types": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "esm"
+  ],
   "scripts": {
     "build": "rimraf -rf lib esm dist && npm run build:cjs && npm run build:esm && npm run build:umd && ts-node copy",
     "build:cjs": "tsc --project tsconfig.build.json",
@@ -20,8 +24,8 @@
     "build:umd": "rollup --config"
   },
   "dependencies": {
-    "@kdesignable/core": "1.0.1",
-    "@kdesignable/shared": "1.0.1",
+    "@designable-next/core": "0.1.0-alpha.2",
+    "@designable-next/shared": "0.1.0-alpha.2",
     "dateformat": "^4.5.1"
   },
   "devDependencies": {
@@ -32,7 +36,7 @@
     "@formily/reactive": "^2.3.7",
     "@formily/reactive-react": "^2.3.7",
     "antd": "^6.0.0",
-    "react": ">=18.0.0"
+    "react": ">=19.0.0 <20.0.0"
   },
   "engines": {
     "node": ">=22.0.0",
@@ -40,6 +44,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "gitHead": "24881b52a153055405724f967b90f50801ffc618"
+  }
 }

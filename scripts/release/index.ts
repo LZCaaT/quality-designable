@@ -17,7 +17,7 @@ const LernaJSON = fs.readJSONSync(path.resolve(__dirname, '../../lerna.json'))
 
 const ReleaseTitle = 'Designable Release 🚀'
 
-const GithubRepo = 'https://github.com/potop/kdesignable'
+const GithubRepo = 'https://github.com/LZCaaT/quality-designable'
 
 const CommitGroupBy: Array<[string, string[]]> = [
   [':tada: Enhancements', ['feat', 'features', 'feature']],

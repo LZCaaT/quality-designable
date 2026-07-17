@@ -1,5 +1,5 @@
+import { TreeNode } from '@designable-next/core'
 import { observer } from '@formily/reactive-react'
-import { TreeNode } from '@kdesignable/core'
 import React, { Fragment } from 'react'
 export interface INodeTitleWidgetProps {
   node: TreeNode

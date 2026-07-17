@@ -1,4 +1,3 @@
-import { action, define, observable } from '@formily/reactive'
 import {
   ILineSegment,
   IPoint,
@@ -15,7 +14,8 @@ import {
   calcSpaceBlockOfRect,
   isEqualRect,
   isLineSegment,
-} from '@kdesignable/shared'
+} from '@designable-next/shared'
+import { action, define, observable } from '@formily/reactive'
 import { CursorDragType } from './Cursor'
 import { Operation } from './Operation'
 import { ISnapLine, SnapLine } from './SnapLine'

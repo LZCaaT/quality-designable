@@ -1,4 +1,4 @@
-import { GlobalRegistry } from '@kdesignable/core'
+import { GlobalRegistry } from '@designable-next/core'
 
 GlobalRegistry.registerDesignerLocales({
   'zh-CN': {

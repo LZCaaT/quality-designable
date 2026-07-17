@@ -1,6 +1,6 @@
+import { IconWidget, TextWidget, usePrefix } from '@designable-next/react'
 import { observer } from '@formily/reactive-react'
 import { clone, toArr } from '@formily/shared'
-import { IconWidget, TextWidget, usePrefix } from '@kdesignable/react'
 import React from 'react'
 import { traverseTree } from './shared'
 import './styles.scss'

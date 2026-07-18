@@ -49,6 +49,12 @@ export const NodePathWidget: React.FC<INodePathWidgetProps> = observer(
       ),
     }))
 
-    return <Breadcrumb className={prefix} items={breadcrumbItems} />
+    return (
+      <Breadcrumb
+        className={prefix}
+        classNames={{ separator: `${prefix}-separator` }}
+        items={breadcrumbItems}
+      />
+    )
   }
 )

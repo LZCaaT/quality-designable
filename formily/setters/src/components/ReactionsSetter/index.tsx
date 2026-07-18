@@ -204,6 +204,13 @@ export const ReactionsSetter: React.FC<IReactionsSetterProps> = (props) => {
                   x-component-props={{
                     formCollapse,
                     defaultActiveKey: ['deps', 'state'],
+                    bordered: false,
+                    classNames: {
+                      root: `${prefix}-collapse`,
+                      header: `${prefix}-collapse-header`,
+                      icon: `${prefix}-collapse-icon`,
+                      body: `${prefix}-collapse-body`,
+                    },
                     style: { marginBottom: 10 },
                   }}
                 >

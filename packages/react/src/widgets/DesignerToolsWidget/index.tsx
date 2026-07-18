@@ -91,6 +91,10 @@ export const DesignerToolsWidget: React.FC<IDesignerToolsWidgetProps> =
       return (
         <Fragment>
           <InputNumber
+            classNames={{
+              root: `${prefix}-input-number`,
+              actions: `${prefix}-input-number-actions`,
+            }}
             size="small"
             value={screen.width}
             style={{ width: 70, textAlign: 'center' }}
@@ -107,6 +111,10 @@ export const DesignerToolsWidget: React.FC<IDesignerToolsWidgetProps> =
             style={{ padding: '0 3px', color: '#999' }}
           />
           <InputNumber
+            classNames={{
+              root: `${prefix}-input-number`,
+              actions: `${prefix}-input-number-actions`,
+            }}
             value={screen.height}
             size="small"
             style={{

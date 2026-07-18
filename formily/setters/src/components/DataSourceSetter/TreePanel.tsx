@@ -116,6 +116,9 @@ export const TreePanel: React.FC<ITreePanelProps> = observer((props) => {
       <div className={`${prefix + '-layout-item-content'}`}>
         <Tree
           blockNode
+          classNames={{
+            item: `${prefix}-tree-item`,
+          }}
           draggable={true}
           allowDrop={props.allowTree ? () => true : limitTreeDrag}
           defaultExpandAll

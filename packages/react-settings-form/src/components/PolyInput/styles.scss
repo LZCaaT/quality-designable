@@ -10,11 +10,7 @@
     margin-right: 2px;
     display: flex;
 
-    .ant-select {
-      width: 100%;
-    }
-
-    .ant-input-number {
+    > * {
       width: 100%;
     }
   }

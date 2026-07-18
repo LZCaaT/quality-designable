@@ -20,42 +20,33 @@
     background-color: rgba(0, 0, 0, 0.3);
   }
 
-  .ant-collapse {
+  &-collapse {
     border: 1px solid $border-color-split;
+  }
 
-    &-header {
-      padding: 8px 10px !important;
-      background-color: $component-background !important;
-      border-bottom: 1px solid $border-color-split !important;
-      font-weight: 500 !important;
+  &-collapse-header {
+    padding: 8px 10px !important;
+    background-color: $component-background !important;
+    border-bottom: 1px solid $border-color-split !important;
+    font-weight: 500 !important;
+  }
 
-      .ant-collapse-arrow {
-        margin-right: 4px !important;
-      }
-    }
+  &-collapse-icon {
+    margin-inline-end: 4px !important;
+  }
 
-    &-item {
-      border: none !important;
-    }
-
-    &-content {
-      border: none !important;
-      transition: none !important;
-    }
-
-    &-content-box {
-      padding: 12px !important;
-    }
+  &-collapse-body {
+    padding: 12px !important;
   }
 
   .reaction-runner {
-    .ant-collapse-content-box {
+    .dn-reactions-setter-collapse-body {
       padding: 12px 0 !important;
     }
   }
 
   .reaction-state {
-    .ant-collapse-content-box {
+    .dn-reactions-setter-collapse-body {
       padding: 12px 0 !important;
     }
   }

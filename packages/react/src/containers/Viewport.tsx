@@ -1,7 +1,7 @@
 import { Viewport as ViewportType } from '@designable-next/core'
 import { globalThisPolyfill, requestIdle } from '@designable-next/shared'
 import cls from 'classnames'
-import React, { useLayoutEffect, useRef, useState } from 'react'
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { usePrefix, useViewport } from '../hooks'
 import { AuxToolWidget, EmptyWidget } from '../widgets'
 export interface IViewportProps
@@ -19,8 +19,59 @@ export const Viewport: React.FC<IViewportProps> = ({
   const prefix = usePrefix('viewport')
   const viewport = useViewport()
   const ref = useRef<HTMLDivElement>(null)
+  const scrollbarRef = useRef<HTMLDivElement>(null)
+  const scrollEndTimerRef = useRef<ReturnType<typeof setTimeout>>(null)
   const viewportRef = useRef<ViewportType>(null)
   const isFrameRef = useRef(false)
+  const scrollbarPrefix = usePrefix('viewport-scrollbar-thumb')
+
+  const updateScrollbar = () => {
+    const element = ref.current
+    const scrollbar = scrollbarRef.current
+    if (!element || !scrollbar) return false
+
+    const { clientHeight, scrollHeight, scrollTop } = element
+    if (scrollHeight <= clientHeight) {
+      scrollbar.style.opacity = '0'
+      return false
+    }
+
+    const height = Math.max(24, (clientHeight * clientHeight) / scrollHeight)
+    const maxScrollTop = scrollHeight - clientHeight
+    const maxScrollbarTop = clientHeight - height
+    const normalizedScrollTop = Math.min(Math.max(scrollTop, 0), maxScrollTop)
+    const scrollbarTop = (normalizedScrollTop / maxScrollTop) * maxScrollbarTop
+
+    scrollbar.style.height = `${height}px`
+    scrollbar.style.transform = `translate3d(0,${
+      normalizedScrollTop + scrollbarTop
+    }px,0)`
+    return true
+  }
+
+  const handleScroll = (event: React.UIEvent<HTMLDivElement>) => {
+    props.onScroll?.(event)
+    if (isFrameRef.current || !updateScrollbar()) return
+
+    const scrollbar = scrollbarRef.current
+    if (!scrollbar) return
+    scrollbar.style.opacity = '1'
+    if (scrollEndTimerRef.current) {
+      clearTimeout(scrollEndTimerRef.current)
+    }
+    scrollEndTimerRef.current = setTimeout(() => {
+      scrollbar.style.opacity = '0'
+    }, 500)
+  }
+
+  useEffect(() => {
+    return () => {
+      if (scrollEndTimerRef.current) {
+        clearTimeout(scrollEndTimerRef.current)
+      }
+    }
+  }, [])
+
   useLayoutEffect(() => {
     const frameElement = ref.current.querySelector('iframe')
     if (!viewport) return
@@ -53,6 +104,7 @@ export const Viewport: React.FC<IViewportProps> = ({
       {...props}
       ref={ref}
       className={cls(prefix, props.className)}
+      onScroll={handleScroll}
       style={{
         opacity: !loaded ? 0 : 1,
         overflow: isFrameRef.current ? 'hidden' : 'auto',
@@ -62,6 +114,7 @@ export const Viewport: React.FC<IViewportProps> = ({
     >
       {props.children}
       <AuxToolWidget />
+      <div ref={scrollbarRef} className={scrollbarPrefix} />
       <EmptyWidget dragTipsDirection={dragTipsDirection}>
         {placeholder}
       </EmptyWidget>

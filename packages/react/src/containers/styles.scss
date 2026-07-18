@@ -10,6 +10,13 @@
   user-select: none;
   overflow-y: auto;
   overflow-x: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    width: 0 !important;
+    height: 0 !important;
+  }
 
   // & > * {
   //   width: fit-content;
@@ -17,4 +24,19 @@
   //   min-width: 100%;
   //   min-height: 100%;
   // }
+}
+
+.#{$prefix-cls}-viewport-scrollbar-thumb {
+  position: absolute;
+  top: 0;
+  right: 2px;
+  z-index: 9997;
+  width: 4px;
+  min-height: 24px;
+  border-radius: 2px;
+  background-color: var(--dn-scrollbar-color);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 160ms ease-out;
+  will-change: transform, opacity;
 }

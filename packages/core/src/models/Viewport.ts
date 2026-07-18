@@ -145,7 +145,12 @@ export class Viewport {
 
   get innerRect() {
     const rect = this.rect
-    return new Rect(0, 0, rect?.width, rect?.height)
+    return new Rect(
+      0,
+      0,
+      this.viewportElement?.clientWidth || rect?.width,
+      this.viewportElement?.clientHeight || rect?.height
+    )
   }
 
   get offsetX() {

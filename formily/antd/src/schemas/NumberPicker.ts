@@ -63,7 +63,7 @@ export const NumberPicker: ISchema = {
     },
     variant: {
       type: 'string',
-      enum: ['outlined', 'borderless', 'filled', ''],
+      enum: ['outlined', 'borderless', 'filled', 'underlined', ''],
       'x-decorator': 'FormItem',
       'x-component': 'Select',
       'x-component-props': {

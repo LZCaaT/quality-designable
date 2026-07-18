@@ -1,3 +1,4 @@
+import { GlobalRegistry } from '@designable-next/core'
 import { Select } from '@designable-next/formily-antd-v6'
 import { usePrefix } from '@designable-next/react'
 import { Field as FieldType } from '@formily/core'
@@ -14,24 +15,22 @@ import './styles.scss'
 
 const Positions = ['center', 'top', 'right', 'bottom', 'left']
 
-const BorderStyleOptions = [
-  {
-    label: 'None',
-    value: 'none',
-  },
-  {
-    label: <span className="border-style-solid-line" />,
-    value: 'solid',
-  },
-  {
-    label: <span className="border-style-dashed-line" />,
-    value: 'dashed',
-  },
-  {
-    label: <span className="border-style-dotted-line" />,
-    value: 'dotted',
-  },
-]
+const getBorderStyleOptions = () =>
+  ['none', 'solid', 'dashed', 'dotted'].map((value) => ({
+    label: GlobalRegistry.getDesignerMessage(
+      `SettingComponents.BorderStyleSetter.${value}`
+    ),
+    value,
+  }))
+
+const renderBorderStyleOption = ({
+  data,
+}: {
+  data?: { label?: React.ReactNode; value?: string }
+}) => {
+  if (!data?.value || data.value === 'none') return data?.label
+  return <span className={`border-style-${data.value}-line`} />
+}
 
 const createBorderProp = (position: string, key: string) => {
   const insert = position === 'center' ? '' : `-${position}`
@@ -102,9 +101,15 @@ export const BorderStyleSetter: React.FC<IBorderStyleSetterProps> = observer(
                     <Field
                       name={createBorderProp(position, 'style')}
                       basePath={field.address.parent()}
-                      dataSource={BorderStyleOptions}
+                      dataSource={getBorderStyleOptions()}
                       reactions={createReaction(position)}
-                      component={[Select, { placeholder: 'Please Select' }]}
+                      component={[
+                        Select,
+                        {
+                          optionRender: renderBorderStyleOption,
+                          placeholder: 'Please Select',
+                        },
+                      ]}
                     />
                     <Field
                       name={createBorderProp(position, 'width')}

@@ -45,6 +45,27 @@ describe('legacy component prop migration', () => {
     expect(componentProps(tree.children[0])).toEqual({ variant: 'borderless' })
   })
 
+  it('removes an empty legacy variant so antd v6 uses its default', () => {
+    const tree = transformToTreeNode(
+      {
+        form: {},
+        schema: {
+          type: 'object',
+          properties: {
+            input: {
+              type: 'string',
+              'x-component': 'Input',
+              'x-component-props': { variant: '' },
+            },
+          },
+        },
+      },
+      { migrateV5Schema: true }
+    )
+
+    expect(componentProps(tree.children[0])).toEqual({})
+  })
+
   it('normalizes Select popup and Slider tooltip props', () => {
     const tree = transformToTreeNode(
       {

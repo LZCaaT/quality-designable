@@ -7,6 +7,12 @@ export default {
       MonacoInput: {
         helpDocument: 'Help Documents',
       },
+      BorderStyleSetter: {
+        none: 'None',
+        solid: 'Solid',
+        dashed: 'Dashed',
+        dotted: 'Dotted',
+      },
     },
   },
 }

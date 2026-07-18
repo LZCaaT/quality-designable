@@ -26,7 +26,7 @@ export const Card: ISchema & { Addition?: ISchema } = {
     },
     variant: {
       type: 'string',
-      enum: ['outlined', 'borderless', 'filled', ''],
+      enum: ['outlined', 'borderless', ''],
       'x-decorator': 'FormItem',
       'x-component': 'Select',
       'x-component-props': {

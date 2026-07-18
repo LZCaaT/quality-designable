@@ -30,7 +30,10 @@ export const Field = {
         autoFocus: '自动获取焦点',
         showSearch: '支持搜索',
         notFoundContent: '空状态内容',
-        variant: '变体',
+        variant: {
+          title: '变体',
+          dataSource: ['描边', '无边框', '填充', '下划线', '继承'],
+        },
         placeholder: '占位提示',
         style: {
           width: '宽度',
@@ -70,7 +73,7 @@ export const Field = {
         fullness: '组件占满',
         inset: '内联布局',
         shallow: '是否浅传递',
-        variant: '变体',
+        bordered: '是否有边框',
         size: { title: '尺寸', dataSource: ['大', '小', '默认', '继承'] },
         layout: { title: '布局', dataSource: ['垂直', '水平', '内联', '继承'] },
         feedbackLayout: {
@@ -138,7 +141,16 @@ export const Field = {
         autoFocus: 'Auto Focus',
         showSearch: 'Show Search',
         notFoundContent: 'Not Found Content',
-        variant: 'Variant',
+        variant: {
+          title: 'Variant',
+          dataSource: [
+            'Outlined',
+            'Borderless',
+            'Filled',
+            'Underlined',
+            'Inherit',
+          ],
+        },
         placeholder: 'Placeholder',
         style: {
           width: 'Width',
@@ -178,7 +190,7 @@ export const Field = {
         fullness: 'Fullness',
         inset: 'Inset',
         shallow: 'Shallow',
-        variant: 'Variant',
+        bordered: 'Bordered',
         size: {
           title: 'Size',
           dataSource: ['Large', 'Small', 'Default', 'Inherit'],
@@ -246,7 +258,10 @@ export const Field = {
         autoFocus: '오토 포커스',
         showSearch: '검색 보기',
         notFoundContent: '값을 찾을 수 없음',
-        variant: '변형',
+        variant: {
+          title: '변형',
+          dataSource: ['외곽선', '테두리 없음', '채움', '밑줄', '상속'],
+        },
         placeholder: 'Placeholder',
         style: {
           width: '너비',
@@ -286,7 +301,7 @@ export const Field = {
         fullness: 'Fullness',
         inset: 'Inset',
         shallow: '얇게',
-        variant: '변형',
+        bordered: '테두리',
         size: {
           title: '크기',
           dataSource: ['크게', '작게', '보통', '상속'],

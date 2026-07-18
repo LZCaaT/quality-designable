@@ -38,6 +38,9 @@ const normalizeLegacyComponentProps = (node: ITreeNode) => {
   const props = node.props?.['x-component-props']
   if (props) {
     const component = node.props?.['x-component']
+    if (borderedToVariantComponents.has(component) && props.variant === '') {
+      delete props.variant
+    }
     if ('bordered' in props && borderedToVariantComponents.has(component)) {
       if (!('variant' in props)) {
         props.variant = props.bordered === false ? 'borderless' : 'outlined'

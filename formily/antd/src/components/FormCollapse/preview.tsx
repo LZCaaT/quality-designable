@@ -29,7 +29,7 @@ const parseCollapse = (parent: TreeNode) => {
 
 export const FormCollapse: DnFC<CollapseProps> & {
   CollapsePanel?: React.FC<{ children?: React.ReactNode }>
-} = observer((props) => {
+} = observer(({ children: _children, ...props }) => {
   const [activeKey, setActiveKey] = useState<string | string[]>([])
   const node = useTreeNode()
   const nodeId = useNodeIdProps()

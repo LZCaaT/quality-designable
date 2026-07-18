@@ -21,10 +21,24 @@ const createOptions = (options: ITransformerOptions): ITransformerOptions => {
   }
 }
 
-const normalizeV5Props = (node: ITreeNode) => {
+const borderedToVariantComponents = new Set([
+  'ArrayCards',
+  'Card',
+  'Cascader',
+  'DatePicker',
+  'Input',
+  'NumberPicker',
+  'Password',
+  'Select',
+  'TimePicker',
+  'TreeSelect',
+])
+
+const normalizeLegacyComponentProps = (node: ITreeNode) => {
   const props = node.props?.['x-component-props']
   if (props) {
-    if ('bordered' in props) {
+    const component = node.props?.['x-component']
+    if ('bordered' in props && borderedToVariantComponents.has(component)) {
       if (!('variant' in props)) {
         props.variant = props.bordered === false ? 'borderless' : 'outlined'
       }
@@ -48,7 +62,7 @@ const normalizeV5Props = (node: ITreeNode) => {
       delete props.tooltipPlacement
     }
   }
-  node.children?.forEach(normalizeV5Props)
+  node.children?.forEach(normalizeLegacyComponentProps)
 }
 
 const findNode = (node: ITreeNode, finder?: (node: ITreeNode) => boolean) => {
@@ -150,7 +164,7 @@ export const transformToTreeNode = (
     appendTreeNode(root, schema)
   })
   if (realOptions.migrateV5Schema) {
-    normalizeV5Props(root)
+    normalizeLegacyComponentProps(root)
   }
   return root
 }

@@ -23,13 +23,12 @@ export const FormCollapse: ISchema & { CollapsePanel?: ISchema } = {
       'x-decorator': 'FormItem',
       'x-component': 'Switch',
     },
-    variant: {
-      type: 'string',
-      enum: ['outlined', 'borderless', 'filled', ''],
+    bordered: {
+      type: 'boolean',
       'x-decorator': 'FormItem',
-      'x-component': 'Select',
+      'x-component': 'Switch',
       'x-component-props': {
-        defaultValue: 'outlined',
+        defaultChecked: true,
       },
     },
   },

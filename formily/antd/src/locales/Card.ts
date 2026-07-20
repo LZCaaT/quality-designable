@@ -7,7 +7,7 @@ export const Card = {
         title: '标题',
         extra: '右侧扩展',
         variant: {
-          title: '变体',
+          title: '组件形态',
           dataSource: ['描边', '无边框', '继承'],
         },
         cardTypes: [

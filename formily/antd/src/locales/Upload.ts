@@ -13,10 +13,7 @@ export const Upload = {
         listType: { title: '列表类型', dataSource: ['文本', '图片', '卡片'] },
         multiple: '多选模式',
         name: '字段标识',
-        openFileDialogOnClick: {
-          title: '点击打开文件对话框',
-          tooltip: '点击打开文件对话框',
-        },
+        openFileDialogOnClick: '点击打开文件对话框',
         showUploadList: '是否展示文件列表',
         withCredentials: '携带Cookie',
         maxCount: '最大数量',

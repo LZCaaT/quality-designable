@@ -31,7 +31,7 @@ export const Field = {
         showSearch: '支持搜索',
         notFoundContent: '空状态内容',
         variant: {
-          title: '变体',
+          title: '组件形态',
           dataSource: ['描边', '无边框', '填充', '下划线', '继承'],
         },
         placeholder: '占位提示',

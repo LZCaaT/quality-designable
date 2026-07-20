@@ -29,12 +29,13 @@ describe('useValidNodeOffsetRect', () => {
   const oldRect = { x: 10, y: 20, width: 100, height: 30 } as DOMRect
   const movedRect = { x: 210, y: 120, width: 100, height: 30 } as DOMRect
   const lateRect = { x: 410, y: 220, width: 100, height: 30 } as DOMRect
+  const childrenRect = { x: 10, y: 20, width: 600, height: 300 } as DOMRect
 
   let cursorStatus: CursorStatus
   let currentRect: DOMRect
   let subscriptions: Map<string, () => void>
 
-  const renderRect = () => {
+  const renderRect = (getRect = () => currentRect) => {
     const cursor = {
       dragType: CursorDragType.Move,
       get status() {
@@ -50,7 +51,7 @@ describe('useValidNodeOffsetRect', () => {
     } as unknown as Engine
     const viewport = {
       findElementById: jest.fn(),
-      getValidNodeOffsetRect: jest.fn(() => currentRect),
+      getValidNodeOffsetRect: jest.fn(getRect),
     } as unknown as Viewport
 
     jest.mocked(useDesigner).mockReturnValue(engine)
@@ -87,6 +88,30 @@ describe('useValidNodeOffsetRect', () => {
     currentRect = oldRect
     act(() => {
       jest.runAllTimers()
+    })
+
+    expect(result.current).toBe(oldRect)
+  })
+
+  it('measures a dropped node before the first paint', () => {
+    cursorStatus = CursorStatus.DragStop
+    let rectReads = 0
+
+    const { result } = renderRect(() => {
+      rectReads += 1
+      return rectReads === 1 ? undefined : oldRect
+    })
+
+    expect(result.current).toBe(oldRect)
+  })
+
+  it('replaces a temporary children rect before the first paint', () => {
+    cursorStatus = CursorStatus.DragStop
+    let rectReads = 0
+
+    const { result } = renderRect(() => {
+      rectReads += 1
+      return rectReads === 1 ? childrenRect : oldRect
     })
 
     expect(result.current).toBe(oldRect)

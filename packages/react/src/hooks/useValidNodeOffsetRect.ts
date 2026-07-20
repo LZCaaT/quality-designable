@@ -46,12 +46,7 @@ export const useValidNodeOffsetRect = (node: TreeNode) => {
   }, [engine, viewport, node])
 
   useLayoutEffect(() => {
-    if (
-      cursorStatus === CursorStatus.Normal &&
-      (!rectRef.current?.width || !rectRef.current?.height)
-    ) {
-      compute()
-    }
+    compute()
   }, [compute, cursorStatus, rectRef])
 
   useEffect(() => {

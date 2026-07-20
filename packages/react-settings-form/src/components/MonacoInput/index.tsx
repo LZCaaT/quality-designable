@@ -268,6 +268,7 @@ export const MonacoInput: React.FC<MonacoInputProps> & {
           language={realLanguage.current}
           options={{
             ...props.options,
+            useShadowDOM: false,
             lineNumbers: 'off',
             readOnly: true,
             glyphMargin: false,
@@ -309,6 +310,7 @@ export const MonacoInput: React.FC<MonacoInputProps> & {
           options={{
             glyphMargin: true,
             ...props.options,
+            useShadowDOM: false,
             tabSize: 2,
             smoothScrolling: true,
             scrollbar: {

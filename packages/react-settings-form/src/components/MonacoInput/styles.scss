@@ -5,10 +5,13 @@
   height: 100%;
   opacity: 0;
   display: flex;
-  clip-path: inset(0);
 
   &.loaded {
     opacity: 1;
+  }
+
+  .monaco-editor .overflow-guard {
+    clip-path: inset(0);
   }
 
   &-view {

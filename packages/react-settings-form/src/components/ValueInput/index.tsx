@@ -48,14 +48,15 @@ export const ValueInput = createPolyInput([
     component: (props: any) => {
       return (
         <Popover
+          destroyOnHidden
           content={
             <div
               style={{
                 width: 400,
                 height: 200,
                 marginLeft: -8,
-                marginRight: -16,
-                marginBottom: -12,
+                marginRight: -8,
+                marginBottom: -8,
               }}
             >
               <MonacoInput {...props} language="javascript.expression" />

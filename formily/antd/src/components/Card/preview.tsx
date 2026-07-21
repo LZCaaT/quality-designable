@@ -8,6 +8,12 @@ import { AllSchemas } from '../../schemas'
 import { createVoidFieldSchema } from '../Field'
 
 export const Card: DnFC<React.ComponentProps<typeof AntdCard>> = (props) => {
+  const children = React.Children.toArray(props.children).length ? (
+    props.children
+  ) : (
+    <div aria-hidden />
+  )
+
   return (
     <AntdCard
       {...props}
@@ -17,7 +23,7 @@ export const Card: DnFC<React.ComponentProps<typeof AntdCard>> = (props) => {
         </span>
       }
     >
-      {props.children}
+      {children}
     </AntdCard>
   )
 }

@@ -1,38 +1,18 @@
 import {
   MonacoInput,
-  getNpmCDNRegistry,
   getTypeScriptApi,
 } from '@designable-next/react-settings-form'
+import formilyCoreDeclaration from './formilyCoreDeclaration'
 
-export interface IDependency {
-  name: string
-  path: string
-}
+let declarationPromise: Promise<void> | undefined
 
-const loadDependencies = async (deps: IDependency[]) => {
-  return Promise.all(
-    deps.map(async ({ name, path }) => ({
-      name,
-      path,
-      library: await fetch(`${getNpmCDNRegistry()}/${name}/${path}`).then(
-        (res) => res.text()
-      ),
-    }))
-  )
-}
-
-export const initDeclaration = async () => {
-  return MonacoInput.loader.init().then(async (monaco) => {
+const initializeDeclaration = () => {
+  return MonacoInput.loader.init().then((monaco) => {
     const typescript = getTypeScriptApi(monaco)
-    const deps = await loadDependencies([
-      { name: '@formily/core', path: 'dist/formily.core.all.d.ts' },
-    ])
-    deps?.forEach(({ name, library }) => {
-      typescript.typescriptDefaults.addExtraLib(
-        `declare module '${name}'{ ${library} }`,
-        `file:///node_modules/${name}/index.d.ts`
-      )
-    })
+    typescript.typescriptDefaults.addExtraLib(
+      `declare module '@formily/core'{ ${formilyCoreDeclaration} }`,
+      'file:///node_modules/@formily/core/index.d.ts'
+    )
     typescript.typescriptDefaults.addExtraLib(
       `
     import { Form, Field } from '@formily/core'
@@ -70,4 +50,14 @@ export const initDeclaration = async () => {
       `file:///node_modules/formily_global.d.ts`
     )
   })
+}
+
+export const initDeclaration = () => {
+  if (!declarationPromise) {
+    declarationPromise = initializeDeclaration().catch((error) => {
+      declarationPromise = undefined
+      throw error
+    })
+  }
+  return declarationPromise
 }

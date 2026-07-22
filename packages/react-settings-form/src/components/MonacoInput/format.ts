@@ -1,28 +1,17 @@
 import { parse } from '@babel/parser'
-import { getNpmCDNRegistry } from '../../registry'
+import prettier from 'prettier/standalone'
 interface IPrettierModule {
-  default: {
-    format(
-      source: string,
-      options: {
-        semi?: boolean
-        parser?: (code: string) => any
-      }
-    ): string
-  }
-}
-
-const cache: { prettier: Promise<IPrettierModule> } = {
-  prettier: null,
+  format(
+    source: string,
+    options: {
+      semi?: boolean
+      parser?: (code: string) => any
+    }
+  ): string
 }
 
 export const format = async (language: string, source: string) => {
-  cache.prettier =
-    cache.prettier ||
-    new Function(
-      `return import("${getNpmCDNRegistry()}/prettier@2.x/esm/standalone.mjs")`
-    )()
-  return cache.prettier.then((module) => {
+  return Promise.resolve(prettier as IPrettierModule).then((module) => {
     if (
       language === 'javascript.expression' ||
       language === 'typescript.expression'
@@ -30,7 +19,7 @@ export const format = async (language: string, source: string) => {
       return source
     }
     if (/(?:javascript|typescript)/gi.test(language)) {
-      return module.default.format(source, {
+      return module.format(source, {
         semi: false,
         parser(text) {
           return parse(text, {

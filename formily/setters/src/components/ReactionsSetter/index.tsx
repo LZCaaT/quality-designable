@@ -9,7 +9,6 @@ import {
 } from '@designable-next/formily-antd-v6'
 import { TextWidget, usePrefix } from '@designable-next/react'
 import { MonacoInput } from '@designable-next/react-settings-form'
-import { requestIdle } from '@designable-next/shared'
 import { createForm, isVoidField } from '@formily/core'
 import { createSchemaField } from '@formily/react'
 import { clone, uid } from '@formily/shared'
@@ -136,6 +135,12 @@ const FieldStateValueTypes = {
   validating: 'boolean',
 }
 
+const prepareDeclaration = () => {
+  void initDeclaration().catch((error) => {
+    console.error('Failed to initialize the reactions editor.', error)
+  })
+}
+
 export const ReactionsSetter: React.FC<IReactionsSetterProps> = (props) => {
   const [modalVisible, setModalVisible] = useState(false)
   const [innerVisible, setInnerVisible] = useState(false)
@@ -149,27 +154,27 @@ export const ReactionsSetter: React.FC<IReactionsSetterProps> = (props) => {
     () => FormCollapse.createFormCollapse(['deps', 'state']),
     [modalVisible]
   )
-  const openModal = () => setModalVisible(true)
-  const closeModal = () => setModalVisible(false)
+  const openModal = () => {
+    setInnerVisible(true)
+    setModalVisible(true)
+  }
+  const closeModal = () => {
+    setModalVisible(false)
+    setInnerVisible(false)
+  }
   useEffect(() => {
     if (modalVisible) {
-      requestIdle(
-        () => {
-          initDeclaration().then(() => {
-            setInnerVisible(true)
-          })
-        },
-        {
-          timeout: 400,
-        }
-      )
-    } else {
-      setInnerVisible(false)
+      prepareDeclaration()
     }
   }, [modalVisible])
   return (
     <>
-      <Button block onClick={openModal}>
+      <Button
+        block
+        onClick={openModal}
+        onFocus={prepareDeclaration}
+        onMouseEnter={prepareDeclaration}
+      >
         <TextWidget token="SettingComponents.ReactionsSetter.configureReactions" />
       </Button>
       <Modal

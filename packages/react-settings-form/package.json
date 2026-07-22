@@ -1,6 +1,6 @@
 {
   "name": "@designable-next/react-settings-form",
-  "version": "0.1.0-alpha.2",
+  "version": "0.1.0-alpha.3",
   "homepage": "https://github.com/LZCaaT/quality-designable#readme",
   "bugs": {
     "url": "https://github.com/LZCaaT/quality-designable/issues"
@@ -25,9 +25,9 @@
   },
   "dependencies": {
     "@babel/parser": "^7.14.7",
-    "@designable-next/core": "0.1.0-alpha.2",
-    "@designable-next/react": "0.1.0-alpha.2",
-    "@designable-next/shared": "0.1.0-alpha.2",
+    "@designable-next/core": "0.1.0-alpha.3",
+    "@designable-next/react": "0.1.0-alpha.3",
+    "@designable-next/shared": "0.1.0-alpha.3",
     "@monaco-editor/react": "^4.7.0",
     "monaco-editor": "^0.55.1",
     "prettier": "^2.3.2",

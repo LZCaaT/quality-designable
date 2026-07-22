@@ -1,14 +1,10 @@
 # Changelog
 
-## v0.1.0-alpha.2 (2026-07-16)
+## v1.0.1(2026-06-11)
 
-### Bug Fixes
+### :beetle: Bug Fixes
 
-1. Keep the selection overlay aligned after dropping or moving a component.
-
-### Tests
-
-1. Upgrade Jest and add selection overlay synchronization regression tests.
+1. [fix: support Monaco 0.53+ and replace react-color with antd ColorPicker](https://github.com/LZCaaT/quality-designable/commit/bcfeab0) :point_right: ( [Alexander Simbirtsev](https://github.com/Alexander Simbirtsev) )
 
 ## v1.0.0(2026-03-02)
 
@@ -53,5 +49,9 @@
 1. [chore(cleanup): 🗑️ remove deprecated `react-sandbox` package and associated files](https://github.com/LZCaaT/quality-designable/commit/1ef43ce) :point_right: ( [Alexander Simbirtsev](https://github.com/Alexander Simbirtsev) )
 
 ## v1.0.0-beta.65(2025-06-23)
+
+### No Change Log
+
+## 1.0.0-beta.65(2025-06-20)
 
 ### No Change Log

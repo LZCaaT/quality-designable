@@ -15,19 +15,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout designable
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           path: quality-designable
 
       - name: Checkout antd v6 components
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           repository: LZCaaT/quality-formily-antd-v6
           ref: feat/quality-scope
           path: quality-formily-antd-v6
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: 22.14.0
           registry-url: https://registry.npmjs.org
@@ -36,6 +36,14 @@ jobs:
 
       - name: Use npm with Trusted Publishing support
         run: npm install --global npm@11.5.1
+
+      - name: Install antd v6 dependencies
+        working-directory: quality-formily-antd-v6
+        run: npm ci --ignore-scripts
+
+      - name: Build antd v6 components
+        working-directory: quality-formily-antd-v6
+        run: npm run build --workspace @designable-next/formily-antd-v6
 
       - name: Install dependencies
         working-directory: quality-designable

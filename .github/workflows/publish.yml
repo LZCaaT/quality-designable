@@ -39,7 +39,7 @@ jobs:
 
       - name: Install antd v6 dependencies
         working-directory: quality-formily-antd-v6
-        run: npm ci --ignore-scripts
+        run: npm ci --ignore-scripts --legacy-peer-deps
 
       - name: Build antd v6 components
         working-directory: quality-formily-antd-v6

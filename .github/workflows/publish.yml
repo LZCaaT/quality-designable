@@ -1,0 +1,50 @@
+name: Publish packages
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout designable
+        uses: actions/checkout@v4
+        with:
+          path: quality-designable
+
+      - name: Checkout antd v6 components
+        uses: actions/checkout@v4
+        with:
+          repository: LZCaaT/quality-formily-antd-v6
+          ref: feat/quality-scope
+          path: quality-formily-antd-v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.14.0
+          registry-url: https://registry.npmjs.org
+          cache: npm
+          cache-dependency-path: quality-designable/package-lock.json
+
+      - name: Use npm with Trusted Publishing support
+        run: npm install --global npm@11.5.1
+
+      - name: Install dependencies
+        working-directory: quality-designable
+        run: npm install --ignore-scripts
+
+      - name: Build packages
+        working-directory: quality-designable
+        run: npm run build
+
+      - name: Publish packages
+        working-directory: quality-designable
+        run: npm publish --workspaces --if-present --tag next --provenance

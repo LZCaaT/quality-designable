@@ -4,11 +4,14 @@ on:
   push:
     tags:
       - 'v*'
-  workflow_dispatch:
 
 permissions:
   contents: read
   id-token: write
+
+concurrency:
+  group: npm-publish-${{ github.repository }}
+  cancel-in-progress: false
 
 jobs:
   publish:
@@ -37,6 +40,29 @@ jobs:
       - name: Use npm with Trusted Publishing support
         run: npm install --global npm@11.5.1
 
+      - name: Resolve release channel
+        id: release
+        working-directory: quality-designable
+        shell: bash
+        run: |
+          VERSION="$(node -p "require('./lerna.json').version")"
+          EXPECTED_TAG="v${VERSION}"
+
+          if [[ "${GITHUB_REF_NAME}" != "${EXPECTED_TAG}" ]]; then
+            echo "Git tag ${GITHUB_REF_NAME} does not match package version ${VERSION}." >&2
+            exit 1
+          fi
+
+          if [[ "${VERSION}" == *-* ]]; then
+            DIST_TAG="next"
+          else
+            DIST_TAG="latest"
+          fi
+
+          echo "version=${VERSION}" >> "${GITHUB_OUTPUT}"
+          echo "dist_tag=${DIST_TAG}" >> "${GITHUB_OUTPUT}"
+          echo "Publishing ${VERSION} to npm channel ${DIST_TAG}."
+
       - name: Install antd v6 dependencies
         working-directory: quality-formily-antd-v6
         run: npm ci --ignore-scripts --legacy-peer-deps
@@ -55,4 +81,6 @@ jobs:
 
       - name: Publish packages
         working-directory: quality-designable
-        run: npm publish --workspaces --if-present --tag next --provenance
+        env:
+          DIST_TAG: ${{ steps.release.outputs.dist_tag }}
+        run: npm publish --workspaces --if-present --tag "${DIST_TAG}" --provenance

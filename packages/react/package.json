@@ -1,6 +1,6 @@
 {
   "name": "@designable-next/react",
-  "version": "0.1.0-alpha.5",
+  "version": "0.1.0-alpha.6",
   "homepage": "https://github.com/LZCaaT/quality-designable#readme",
   "bugs": {
     "url": "https://github.com/LZCaaT/quality-designable/issues"
@@ -24,8 +24,8 @@
     "build:umd": "rollup --config"
   },
   "dependencies": {
-    "@designable-next/core": "0.1.0-alpha.5",
-    "@designable-next/shared": "0.1.0-alpha.5",
+    "@designable-next/core": "0.1.0-alpha.6",
+    "@designable-next/shared": "0.1.0-alpha.6",
     "dateformat": "^4.5.1"
   },
   "devDependencies": {

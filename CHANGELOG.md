@@ -56,6 +56,12 @@
 
 ### No Change Log
 
+## v0.1.0-alpha.5(2026-07-27)
+
+### :beetle: Bug Fixes
+
+1. [fix(ci): 修复发布前版本范围校验](https://github.com/LZCaaT/quality-designable/commit/3b2b01f) :point_right: ( [lvzhicheng](https://github.com/lvzhicheng) )
+
 ## v0.1.0-alpha.4(2026-07-27)
 
 ### :beetle: Bug Fixes

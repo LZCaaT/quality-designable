@@ -19,7 +19,7 @@
 
 1. 确认 `release.config.json` 指向已发布的运行时版本。
 2. 使用 Node.js 22 执行 `npm ci --ignore-scripts`，完成一次干净安装。
-3. `preversion` 会运行测试、构建和只读 lint 检查。
+3. `preversion` 会先构建全部工作区，再运行测试和只读 lint 检查。
 4. 执行 `npm run version:alpha -- --yes --no-push`，生成发布提交和 `v<version>` 标签。
 5. 推送发布提交，再推送标签。标签触发 `.github/workflows/publish.yml`。
 

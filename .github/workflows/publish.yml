@@ -121,15 +121,15 @@ jobs:
         working-directory: quality-designable
         run: npm ci --ignore-scripts
 
+      - name: Build packages
+        working-directory: quality-designable
+        run: npm run build
+
       - name: Run tests
         working-directory: quality-designable
         run: |
           npm test -- --runInBand
           npm run lint:check
-
-      - name: Build packages
-        working-directory: quality-designable
-        run: npm run build
 
       - name: Verify package contents
         working-directory: quality-designable

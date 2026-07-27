@@ -73,9 +73,9 @@ jobs:
           node <<'NODE'
           const fs = require('node:fs')
           const path = require('node:path')
-          const semver = require('semver')
           const expected = require('./lerna.json').version
           const runtime = require('./release.config.json').formilyAntdV6Version
+          const expectedRuntimeRange = `>=${runtime} <0.2.0`
 
           for (const root of ['packages', 'formily']) {
             for (const directory of fs.readdirSync(root)) {
@@ -86,8 +86,8 @@ jobs:
                 throw new Error(`${pkg.name} version ${pkg.version} does not match ${expected}`)
               }
               const runtimeRange = pkg.peerDependencies?.['@designable-next/formily-antd-v6']
-              if (runtimeRange && semver.lt(semver.minVersion(runtimeRange), runtime)) {
-                throw new Error(`${pkg.name} still allows a runtime older than ${runtime}`)
+              if (runtimeRange && runtimeRange !== expectedRuntimeRange) {
+                throw new Error(`${pkg.name} runtime range ${runtimeRange} does not match ${expectedRuntimeRange}`)
               }
             }
           }

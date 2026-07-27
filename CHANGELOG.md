@@ -56,6 +56,12 @@
 
 ### No Change Log
 
+## v0.1.0-alpha.4(2026-07-27)
+
+### :beetle: Bug Fixes
+
+1. [fix(ci): 修复设计器版本命令中断](https://github.com/LZCaaT/quality-designable/commit/a29643e) :point_right: ( [lvzhicheng](https://github.com/lvzhicheng) )
+
 ## v0.1.0-alpha.3(2026-07-22)
 
 ### :beetle: Bug Fixes

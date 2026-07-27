@@ -1,6 +1,6 @@
 {
   "name": "@designable-next/core",
-  "version": "0.1.0-alpha.4",
+  "version": "0.1.0-alpha.5",
   "homepage": "https://github.com/LZCaaT/quality-designable#readme",
   "bugs": {
     "url": "https://github.com/LZCaaT/quality-designable/issues"
@@ -24,7 +24,7 @@
     "build:umd": "rollup --config"
   },
   "dependencies": {
-    "@designable-next/shared": "0.1.0-alpha.4",
+    "@designable-next/shared": "0.1.0-alpha.5",
     "@juggle/resize-observer": "^3.3.1"
   },
   "devDependencies": {

@@ -21,12 +21,22 @@ jobs:
         uses: actions/checkout@v6
         with:
           path: quality-designable
+          fetch-depth: 0
+
+      - name: Resolve antd v6 runtime version
+        id: runtime
+        working-directory: quality-designable
+        shell: bash
+        run: |
+          VERSION="$(node -p "require('./release.config.json').formilyAntdV6Version")"
+          echo "version=${VERSION}" >> "${GITHUB_OUTPUT}"
+          echo "Using @designable-next/formily-antd-v6@${VERSION}."
 
       - name: Checkout antd v6 components
         uses: actions/checkout@v6
         with:
           repository: LZCaaT/quality-formily-antd-v6
-          ref: feat/quality-scope
+          ref: v${{ steps.runtime.outputs.version }}
           path: quality-formily-antd-v6
 
       - name: Setup Node.js
@@ -46,10 +56,46 @@ jobs:
         shell: bash
         run: |
           VERSION="$(node -p "require('./lerna.json').version")"
+          RUNTIME_VERSION="$(node -p "require('./release.config.json').formilyAntdV6Version")"
+          CHECKED_OUT_RUNTIME_VERSION="$(node -p "require('../quality-formily-antd-v6/packages/components/package.json').version")"
           EXPECTED_TAG="v${VERSION}"
 
           if [[ "${GITHUB_REF_NAME}" != "${EXPECTED_TAG}" ]]; then
             echo "Git tag ${GITHUB_REF_NAME} does not match package version ${VERSION}." >&2
+            exit 1
+          fi
+
+          if [[ "${CHECKED_OUT_RUNTIME_VERSION}" != "${RUNTIME_VERSION}" ]]; then
+            echo "Checked out runtime ${CHECKED_OUT_RUNTIME_VERSION} does not match release.config.json ${RUNTIME_VERSION}." >&2
+            exit 1
+          fi
+
+          node <<'NODE'
+          const fs = require('node:fs')
+          const path = require('node:path')
+          const semver = require('semver')
+          const expected = require('./lerna.json').version
+          const runtime = require('./release.config.json').formilyAntdV6Version
+
+          for (const root of ['packages', 'formily']) {
+            for (const directory of fs.readdirSync(root)) {
+              const packagePath = path.join(root, directory, 'package.json')
+              if (!fs.existsSync(packagePath)) continue
+              const pkg = require(path.resolve(packagePath))
+              if (!pkg.private && pkg.version !== expected) {
+                throw new Error(`${pkg.name} version ${pkg.version} does not match ${expected}`)
+              }
+              const runtimeRange = pkg.peerDependencies?.['@designable-next/formily-antd-v6']
+              if (runtimeRange && semver.lt(semver.minVersion(runtimeRange), runtime)) {
+                throw new Error(`${pkg.name} still allows a runtime older than ${runtime}`)
+              }
+            }
+          }
+          NODE
+
+          PUBLISHED_RUNTIME="$(npm view "@designable-next/formily-antd-v6@${RUNTIME_VERSION}" version 2>/dev/null || true)"
+          if [[ "${PUBLISHED_RUNTIME}" != "${RUNTIME_VERSION}" ]]; then
+            echo "Runtime @designable-next/formily-antd-v6@${RUNTIME_VERSION} is not available on npm." >&2
             exit 1
           fi
 
@@ -73,14 +119,85 @@ jobs:
 
       - name: Install dependencies
         working-directory: quality-designable
-        run: npm install --ignore-scripts
+        run: npm ci --ignore-scripts
+
+      - name: Run tests
+        working-directory: quality-designable
+        run: |
+          npm test -- --runInBand
+          npm run lint:check
 
       - name: Build packages
         working-directory: quality-designable
         run: npm run build
+
+      - name: Verify package contents
+        working-directory: quality-designable
+        run: |
+          npm pack --workspaces --if-present --dry-run --json > "${RUNNER_TEMP}/packages.json"
+          node - "${RUNNER_TEMP}/packages.json" <<'NODE'
+          const fs = require('node:fs')
+          const packages = JSON.parse(fs.readFileSync(process.argv[2], 'utf8'))
+          const expected = require('./lerna.json').version
+
+          if (packages.length !== 7) {
+            throw new Error(`Expected 7 public packages, received ${packages.length}`)
+          }
+
+          for (const pkg of packages) {
+            if (pkg.version !== expected) {
+              throw new Error(`${pkg.name} tarball version ${pkg.version} does not match ${expected}`)
+            }
+            if (!pkg.files.some((file) => file.path.startsWith('lib/'))) {
+              throw new Error(`${pkg.name} tarball is missing lib output`)
+            }
+            if (!pkg.files.some((file) => file.path.startsWith('esm/'))) {
+              throw new Error(`${pkg.name} tarball is missing esm output`)
+            }
+          }
+          NODE
 
       - name: Publish packages
         working-directory: quality-designable
         env:
           DIST_TAG: ${{ steps.release.outputs.dist_tag }}
         run: npm publish --workspaces --if-present --tag "${DIST_TAG}" --provenance
+
+      - name: Verify published packages
+        working-directory: quality-designable
+        env:
+          VERSION: ${{ steps.release.outputs.version }}
+        shell: bash
+        run: |
+          mapfile -t PACKAGES < <(node - <<'NODE'
+          const fs = require('node:fs')
+          const path = require('node:path')
+          for (const root of ['packages', 'formily']) {
+            for (const directory of fs.readdirSync(root)) {
+              const packagePath = path.join(root, directory, 'package.json')
+              if (!fs.existsSync(packagePath)) continue
+              const pkg = require(path.resolve(packagePath))
+              if (!pkg.private) console.log(pkg.name)
+            }
+          }
+          NODE
+          )
+
+          for attempt in {1..12}; do
+            MISSING=0
+            for package in "${PACKAGES[@]}"; do
+              PUBLISHED_VERSION="$(npm view "${package}@${VERSION}" version 2>/dev/null || true)"
+              if [[ "${PUBLISHED_VERSION}" != "${VERSION}" ]]; then
+                MISSING=1
+                break
+              fi
+            done
+            if [[ "${MISSING}" == "0" ]]; then
+              echo "Verified all designable packages at ${VERSION} on npm."
+              exit 0
+            fi
+            sleep 10
+          done
+
+          echo "Not all published packages were visible on npm after 120 seconds." >&2
+          exit 1

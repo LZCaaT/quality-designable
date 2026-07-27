@@ -52,7 +52,7 @@
     "webpack-dev-server": "5.2.3"
   },
   "peerDependencies": {
-    "@designable-next/formily-antd-v6": "^0.1.0-0",
+    "@designable-next/formily-antd-v6": ">=0.1.0-alpha.2 <0.2.0",
     "@formily/react": "^2.3.7",
     "@formily/reactive": "^2.3.7",
     "@formily/shared": "^2.3.7",

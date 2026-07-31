@@ -7,6 +7,7 @@ export const ArrayTable = {
     addOperation: '添加操作',
     settings: {
       'x-component-props': {
+        bordered: '是否有边框',
         showHeader: '显示头部',
         sticky: '吸顶',
         align: {
@@ -32,6 +33,7 @@ export const ArrayTable = {
     addOperation: 'Add Operations',
     settings: {
       'x-component-props': {
+        bordered: 'Bordered',
         showHeader: 'Show Header',
         sticky: 'Sticky',
         align: {
@@ -57,6 +59,7 @@ export const ArrayTable = {
     addOperation: '작업 추가',
     settings: {
       'x-component-props': {
+        bordered: '테두리',
         showHeader: '헤더 보여주기',
         sticky: '고정',
         align: {

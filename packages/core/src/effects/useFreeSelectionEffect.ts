@@ -4,11 +4,27 @@ import {
   isRectInRect,
   Point,
 } from '@designable-next/shared'
-import { DragStopEvent } from '../events'
-import { CursorDragType, CursorType, Engine, TreeNode } from '../models'
+import { DragMoveEvent, DragStopEvent } from '../events'
+import { CursorDragType, CursorType } from '../models/Cursor'
+import type { Engine } from '../models/Engine'
+import type { TreeNode } from '../models/TreeNode'
 
 export const useFreeSelectionEffect = (engine: Engine) => {
+  let isMovingNode = false
+
+  engine.subscribeTo(DragMoveEvent, () => {
+    engine.workbench.eachWorkspace((workspace) => {
+      if (workspace.operation.moveHelper.dragNodes.length) {
+        isMovingNode = true
+      }
+    })
+  })
+
   engine.subscribeTo(DragStopEvent, (event) => {
+    if (isMovingNode) {
+      isMovingNode = false
+      return
+    }
     if (engine.cursor.dragType !== CursorDragType.Move) {
       return
     }

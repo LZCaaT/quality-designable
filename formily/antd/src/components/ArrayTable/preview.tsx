@@ -52,6 +52,7 @@ const BodyCell: React.FC = (props: any) => {
 export const ArrayTable: DnFC<TableProps<any>> = observer((props) => {
   const node = useTreeNode()
   const nodeId = useNodeIdProps()
+  const additionTitle = node.getMessage('additionTitle')
   useDropTemplate('ArrayTable', (source) => {
     const sortHandleNode = new TreeNode({
       componentName: 'Field',
@@ -112,6 +113,7 @@ export const ArrayTable: DnFC<TableProps<any>> = observer((props) => {
         type: 'void',
         'x-component': 'ArrayTable.Column',
         'x-component-props': {
+          align: 'center',
           title: `Title`,
         },
       },
@@ -150,8 +152,8 @@ export const ArrayTable: DnFC<TableProps<any>> = observer((props) => {
       componentName: 'Field',
       props: {
         type: 'void',
-        title: 'Addition',
         'x-component': 'ArrayTable.Addition',
+        'x-component-props': { title: additionTitle },
       },
     })
     return [objectNode, additionNode]
@@ -197,9 +199,17 @@ export const ArrayTable: DnFC<TableProps<any>> = observer((props) => {
               return <TreeNodeWidget node={child} key={child.id} />
             })
             const props = node.props['x-component-props']
+            const align = node.children.some((child) =>
+              ['Copy', 'Remove', 'MoveDown', 'MoveUp'].some((name) =>
+                child.props['x-component']?.includes(name)
+              )
+            )
+              ? props.align ?? 'center'
+              : props.align
             return (
               <Table.Column
                 {...props}
+                align={align}
                 title={
                   <div data-content-editable="x-component-props.title">
                     {props.title}
@@ -381,6 +391,7 @@ export const ArrayTable: DnFC<TableProps<any>> = observer((props) => {
                     type: 'void',
                     'x-component': 'ArrayTable.Column',
                     'x-component-props': {
+                      align: 'center',
                       title: `Title`,
                     },
                   },
@@ -415,8 +426,8 @@ export const ArrayTable: DnFC<TableProps<any>> = observer((props) => {
                   componentName: 'Field',
                   props: {
                     type: 'void',
-                    title: 'Addition',
                     'x-component': 'ArrayTable.Addition',
+                    'x-component-props': { title: additionTitle },
                   },
                 })
                 ensureObjectItemsNode(node).insertAfter(additionNode)

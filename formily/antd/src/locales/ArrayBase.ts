@@ -19,8 +19,29 @@ export const ArrayAddition = {
     title: '添加按钮',
     settings: {
       'x-component-props': {
+        title: '按钮文案',
         method: '方法',
         defaultValue: '默认值',
+      },
+    },
+  },
+  'en-US': {
+    title: 'Addition',
+    settings: {
+      'x-component-props': {
+        title: 'Button Text',
+        method: 'Method',
+        defaultValue: 'Default Value',
+      },
+    },
+  },
+  'ko-KR': {
+    title: '추가 버튼',
+    settings: {
+      'x-component-props': {
+        title: '버튼 문구',
+        method: '방법',
+        defaultValue: '기본 값',
       },
     },
   },

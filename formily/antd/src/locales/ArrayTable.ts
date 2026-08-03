@@ -5,6 +5,7 @@ export const ArrayTable = {
     addColumn: '添加列',
     addIndex: '添加索引',
     addOperation: '添加操作',
+    additionTitle: '添加一行',
     settings: {
       'x-component-props': {
         bordered: '是否有边框',
@@ -31,6 +32,7 @@ export const ArrayTable = {
     addColumn: 'Add Column',
     addIndex: 'Add Index',
     addOperation: 'Add Operations',
+    additionTitle: 'Add Row',
     settings: {
       'x-component-props': {
         bordered: 'Bordered',
@@ -57,6 +59,7 @@ export const ArrayTable = {
     addColumn: '열 추가',
     addIndex: '색인 추가',
     addOperation: '작업 추가',
+    additionTitle: '행 추가',
     settings: {
       'x-component-props': {
         bordered: '테두리',

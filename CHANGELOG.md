@@ -56,6 +56,12 @@
 
 ### No Change Log
 
+## v0.1.0-alpha.7(2026-07-31)
+
+### :blush: Other Changes
+
+1. [chore(版本): 发布 0.1.0-alpha.7](https://github.com/LZCaaT/quality-designable/commit/6afa7a0) :point_right: ( [lvzhicheng](https://github.com/lvzhicheng) )
+
 ## v0.1.0-alpha.6(2026-07-27)
 
 ### :beetle: Bug Fixes
